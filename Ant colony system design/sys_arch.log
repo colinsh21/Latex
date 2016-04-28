@@ -1,0 +1,895 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.14)  6 APR 2016 12:14
+entering extended mode
+**sys_arch.tex
+("C:\Users\colinsh\Box Sync\TeX Documents\Ant colony system design\sys_arch.tex
+"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\elsarticle\elsarticle.cls"
+Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
+\@bls=\dimen102
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen103
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\pifont.sty"
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\upzd.fd"
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\upsy.fd"
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+\c@tnote=\count88
+\c@fnote=\count89
+\c@cnote=\count90
+\c@ead=\count91
+\c@author=\count92
+\@eadauthor=\toks15
+\c@affn=\count93
+\absbox=\box26
+\keybox=\box27
+\Columnwidth=\dimen106
+\space@left=\dimen107
+\els@boxa=\box28
+\els@boxb=\box29
+\leftMargin=\dimen108
+\@enLab=\toks16
+\@sep=\skip43
+\@@sep=\skip44
+
+("C:\Users\colinsh\Box Sync\TeX Documents\Ant colony system design\sys_arch.spl
+") ("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip45
+\bibsep=\skip46
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count94
+)
+\splwrite=\write3
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks18
+\thm@bodyfont=\toks19
+\thm@headfont=\toks20
+\thm@notefont=\toks21
+\thm@headpunct=\toks22
+\thm@preskip=\skip47
+\thm@postskip=\skip48
+\thm@headsep=\skip49
+\dth@everypar=\toks23
+LaTeX Info: Redefining \qed on input line 283.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks24
+\ex@=\dimen109
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen110
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count95
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count96
+\leftroot@=\count97
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count98
+\DOTSCASE@=\count99
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box30
+\strutbox@=\box31
+\big@size=\dimen111
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
+\dotsspace@=\muskip10
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
+\tag@help=\toks25
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
+\andhelp@=\toks26
+\eqnshift@=\dimen112
+\alignsep@=\dimen113
+\tagshift@=\dimen114
+\tagwidth@=\dimen115
+\totwidth@=\dimen116
+\lineht@=\dimen117
+\@envbody=\toks27
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks28
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2015/09/15 v1.1-100 Sub-captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2015/09/17 v3.3-111 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2015/09/20 v1.7-115 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen118
+\captionmargin@=\dimen119
+\captionwidth=\dimen120
+\caption@tempdima=\dimen121
+\caption@indent=\dimen122
+\caption@parindent=\dimen123
+\caption@hangindent=\dimen124
+)
+\c@ContinuedFloat=\count107
+)
+\c@subfigure=\count108
+\c@subtable=\count109
+)
+("C:\Users\colinsh\Box Sync\TeX Documents\Ant colony system design\sys_arch.aux
+")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+ ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count110
+\scratchdimen=\dimen125
+\scratchbox=\box32
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen126
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks30
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 110.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 110.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+Package natbib Warning: Citation `Piff2013' on page 1 undefined on input line 1
+17.
+
+
+Package natbib Warning: Citation `Doerry2014' on page 1 undefined on input line
+ 117.
+
+
+Package natbib Warning: Citation `Kassel2010' on page 1 undefined on input line
+ 117.
+
+
+Package natbib Warning: Citation `Chalfant2015' on page 1 undefined on input li
+ne 117.
+
+
+Package natbib Warning: Citation `Jaakkola2011' on page 1 undefined on input li
+ne 117.
+
+
+Package natbib Warning: Citation `Doerry2004' on page 1 undefined on input line
+ 117.
+
+
+Package natbib Warning: Citation `Doerry2007' on page 1 undefined on input line
+ 117.
+
+
+Package natbib Warning: Citation `Kassel2010' on page 1 undefined on input line
+ 117.
+
+
+Package natbib Warning: Citation `Trapp2015' on page 1 undefined on input line 
+117.
+
+
+Package natbib Warning: Citation `Keane2011' on page 1 undefined on input line 
+117.
+
+
+Package natbib Warning: Citation `Keane2015' on page 1 undefined on input line 
+117.
+
+
+Package natbib Warning: Citation `Miroyannis2006' on page 1 undefined on input 
+line 117.
+
+
+Package natbib Warning: Citation `Dobson2014' on page 1 undefined on input line
+ 117.
+
+
+Package natbib Warning: Citation `Brown2015' on page 1 undefined on input line 
+117.
+
+[1
+
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+Package natbib Warning: Citation `Andrews1981' on page 2 undefined on input lin
+e 119.
+
+
+Package natbib Warning: Citation `Chandrasegaran2013' on page 2 undefined on in
+put line 119.
+
+
+Package natbib Warning: Citation `Brown2015' on page 2 undefined on input line 
+119.
+
+
+Package natbib Warning: Citation `Chalfant2015' on page 2 undefined on input li
+ne 119.
+
+
+Package natbib Warning: Citation `Chandrasegaran2013' on page 2 undefined on in
+put line 119.
+
+
+Package natbib Warning: Citation `Ullman1992' on page 2 undefined on input line
+ 119.
+
+
+Package natbib Warning: Citation `Mavris2000a' on page 2 undefined on input lin
+e 119.
+
+
+Package natbib Warning: Citation `Kassel2010' on page 2 undefined on input line
+ 119.
+
+
+Package natbib Warning: Citation `Watson1977' on page 2 undefined on input line
+ 122.
+
+
+Package natbib Warning: Citation `Ross2004' on page 2 undefined on input line 1
+22.
+
+
+Package natbib Warning: Citation `Fiedel2011' on page 2 undefined on input line
+ 124.
+
+
+Package natbib Warning: Citation `Chalfant2012' on page 2 undefined on input li
+ne 124.
+
+
+Package natbib Warning: Citation `Chalfant2014' on page 2 undefined on input li
+ne 124.
+
+
+Package natbib Warning: Citation `Chalfant2015' on page 2 undefined on input li
+ne 124.
+
+
+Package natbib Warning: Citation `Chryssostomidis2015' on page 2 undefined on i
+nput line 124.
+
+
+Package natbib Warning: Citation `Trapp2015' on page 2 undefined on input line 
+124.
+
+
+Package natbib Warning: Citation `Dougal2016' on page 2 undefined on input line
+ 124.
+
+[2]
+
+Package natbib Warning: Citation `Mistree1990' on page 3 undefined on input lin
+e 126.
+
+
+Package natbib Warning: Citation `GovernmentAccountabilityOffice2009' on page 3
+ undefined on input line 126.
+
+
+Package natbib Warning: Citation `NAVSEA2012' on page 3 undefined on input line
+ 126.
+
+
+Package natbib Warning: Citation `Kassel2010' on page 3 undefined on input line
+ 126.
+
+
+Package natbib Warning: Citation `Pitts1970' on page 3 undefined on input line 
+126.
+
+
+Package natbib Warning: Citation `Andrews1981' on page 3 undefined on input lin
+e 128.
+
+
+Package natbib Warning: Citation `Andrews1981' on page 3 undefined on input lin
+e 128.
+
+
+Package natbib Warning: Citation `Chandrasegaran2013' on page 3 undefined on in
+put line 128.
+
+
+Package natbib Warning: Citation `VanOers2011' on page 3 undefined on input lin
+e 130.
+
+
+Package natbib Warning: Citation `Gillespie2012' on page 3 undefined on input l
+ine 130.
+
+
+Package natbib Warning: Citation `Rigterink2014' on page 3 undefined on input l
+ine 130.
+
+
+Package natbib Warning: Citation `Dellsy2015' on page 3 undefined on input line
+ 130.
+
+
+Overfull \hbox (13.63007pt too wide) in paragraph at lines 130--131
+\OT1/cmr/m/n/12 prob-lem specifics or level of de-sign fi-delity. This re-quire
+s bridg-ing the functional-
+ []
+
+
+Overfull \hbox (1.81075pt too wide) in paragraph at lines 130--131
+\OT1/cmr/m/n/12 cept de-sign while main-tain-ing scal-a-bil-ity through the en-
+tire pro-cess. Network-
+ []
+
+[3]
+
+Package natbib Warning: Citation `Gillespie2012' on page 4 undefined on input l
+ine 139.
+
+
+Package natbib Warning: Citation `VanOers2011' on page 4 undefined on input lin
+e 139.
+
+
+Package natbib Warning: Citation `VanOers2012' on page 4 undefined on input lin
+e 139.
+
+
+Package natbib Warning: Citation `Rigterink2014' on page 4 undefined on input l
+ine 139.
+
+
+Package natbib Warning: Citation `Shields2015' on page 4 undefined on input lin
+e 139.
+
+
+Package natbib Warning: Citation `Dellsy2015' on page 4 undefined on input line
+ 139.
+
+
+Package natbib Warning: Citation `Newman2003' on page 4 undefined on input line
+ 139.
+
+
+Package natbib Warning: Citation `Newman2003' on page 4 undefined on input line
+ 141.
+
+
+Package natbib Warning: Citation `Newman2010' on page 4 undefined on input line
+ 141.
+
+[4]
+
+! LaTeX Error: File `basicnetwork' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.146 		\includegraphics[scale=.7]{basicnetwork}
+                                                
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `multiplex' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.152 		\includegraphics[scale=.24]{multiplex}
+                                              
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Package natbib Warning: Citation `Gomez2013' on page 5 undefined on input line 
+153.
+
+
+Package natbib Warning: Citation `Gomez2013' on page 5 undefined on input line 
+153.
+
+
+Package natbib Warning: Citation `Gillespie2012' on page 5 undefined on input l
+ine 166.
+
+
+Package natbib Warning: Citation `Gillespie2013' on page 5 undefined on input l
+ine 166.
+
+
+Package natbib Warning: Citation `Rigterink2014' on page 5 undefined on input l
+ine 166.
+
+
+Package natbib Warning: Citation `Dellsy2015' on page 5 undefined on input line
+ 166.
+
+
+Package natbib Warning: Citation `VanOers2011' on page 5 undefined on input lin
+e 166.
+
+
+Package natbib Warning: Citation `VanOers2012' on page 5 undefined on input lin
+e 166.
+
+
+Package natbib Warning: Citation `Fiedel2011' on page 5 undefined on input line
+ 166.
+
+
+! LaTeX Error: File `spatial' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.219 		\includegraphics[scale=.35]{spatial}
+                                            
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `spatial_erem' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.225 		\includegraphics[scale=.35]{spatial_erem}
+                                                 
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `spatial_nrem' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.231 		\includegraphics[scale=.35]{spatial_nrem}
+                                                 
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--235
+
+ []
+
+[5]
+
+Package natbib Warning: Citation `Rigterink2014' on page 6 undefined on input l
+ine 243.
+
+
+Package natbib Warning: Citation `Dellsy2015' on page 6 undefined on input line
+ 243.
+
+
+! LaTeX Error: File `c_sys' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 ...4,trim={1.5cm 1cm 1.5cm 1cm},clip]{c_sys}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `p_sys' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256 ...4,trim={1.5cm 1cm 1.5cm 1cm},clip]{p_sys}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--260
+
+ []
+
+[6]
+
+Package natbib Warning: Citation `Dijkstra1959' on page 7 undefined on input li
+ne 278.
+
+
+! LaTeX Error: File `route_ex_1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.283 		\includegraphics[scale=.4]{route_ex_1}
+                                              
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `route_ex_2' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.289 		\includegraphics[scale=.4]{route_ex_2}
+                                              
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `route_ex_3' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.295 		\includegraphics[scale=.4]{route_ex_3}
+                                              
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `sa_trans_v2' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.307 	\includegraphics[scale=.4]{sa_trans_v2}
+                                              
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[7]
+
+Package natbib Warning: Citation `Keane2011' on page 8 undefined on input line 
+318.
+
+
+Package natbib Warning: Citation `Keane2015' on page 8 undefined on input line 
+318.
+
+
+Package natbib Warning: Citation `Keane2015' on page 8 undefined on input line 
+318.
+
+
+Package natbib Warning: Citation `Gillespie2013' on page 8 undefined on input l
+ine 320.
+
+[8]
+
+! LaTeX Error: File `case_1' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.384 ...0.18,trim={0cm 0cm 0cm 0cm},clip]{case_1}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `case_2' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.390 ...0.18,trim={0cm 0cm 0cm 0cm},clip]{case_2}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `case_3' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.396 ...0.18,trim={0cm 0cm 0cm 0cm},clip]{case_3}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `p_sys' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.404 ...trim={1.5cm 1.5cm 1.5cm 1cm},clip]{p_sys}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `em_sys' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.409 ...rim={1.5cm 1.5cm 1.5cm 1cm},clip]{em_sys}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `c_sys' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.414 ...trim={1.5cm 1.5cm 1.5cm 1cm},clip]{c_sys}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `i_sys' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.419 ...trim={1.5cm 1.5cm 1.5cm 1cm},clip]{i_sys}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[9]
+
+! LaTeX Error: File `s_org_dense' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.509 ...trim={4cm 4cm 4cm 3cm},clip]{s_org_dense}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `s_aux_dense' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.515 ...trim={4cm 4cm 4cm 3cm},clip]{s_aux_dense}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: File `s_ring_dense' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.521 ...rim={4cm 4cm 4cm 3cm},clip]{s_ring_dense}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[10] [11]
+
+Package natbib Warning: Citation `Chryssostomidis2015' on page 12 undefined on 
+input line 545.
+
+[12] [13] [14]
+No file sys_arch.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[15]
+("C:\Users\colinsh\Box Sync\TeX Documents\Ant colony system design\sys_arch.aux
+") ) 
+Here is how much of TeX's memory you used:
+ 3921 strings out of 493921
+ 53928 string characters out of 3147275
+ 120082 words of memory out of 3000000
+ 7146 multiletter control sequences out of 15000+200000
+ 15182 words of font info for 58 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 42i,8n,42p,1511b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmti7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmtt12.pfb>
+Output written on sys_arch.pdf (15 pages, 244283 bytes).
+PDF statistics:
+ 123 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

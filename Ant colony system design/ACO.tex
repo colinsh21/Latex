@@ -1,0 +1,369 @@
+
+
+\documentclass[preprint,12pt,authoryear]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times,authoryear]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pifont}
+\usepackage{amsmath}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+\journal{Ocean Engineering}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{Ant Colony Optimization for System Architecture Design}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \address[label1]{}
+%% \address[label2]{}
+
+\author[label1,cor1]{Colin P. F. Shields}
+\author[label1]{Micheal J. Sypniewski}
+\author[label1]{David J. Singer}
+
+\address[label1]{Department of Naval Architecture and Marine Engineering, University of Michigan}
+\cortext[cor1]{colinsh@umich.edu}
+
+\begin{abstract}
+%% Text of abstract
+In this paper...
+
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+Ants \sep Systems
+
+\end{keyword}
+
+\end{frontmatter}
+
+%% \linenumbers
+
+%% main text
+\section{Introduction}
+\label{}
+
+\subsection{System of systems}
+
+\subsection{ACO}
+
+\section{Problem Formulation}
+
+\subsection{Network Representation of Systems}
+
+$G$ is the spatial network.
+
+
+\subsection{Resilience Objective Function}
+
+\subsection{Representative Cost Objective Function}
+
+\subsection{Penalty Function}
+
+\section{ACO Approach}
+
+\subsection{Conventional ACO}
+Ant Colony Optimization (ACO) is an evolutionary meta-heuristic optimization scheme inspired by the foraging behavior of ants. Originally applied to the Traveling Salesman Problem \citep{Dorigo1996}, ACO has since been successfully employed in many instances of combinatorial optimization problems (\cite{Dorigo1999} provide an overview). The ACO approach uses colonies of ants which explore a solution space and deposit artificial pheromones to guide future ants. Ants who find strong solutions deposit relatively larger amounts of pheromone, positively reinforcing its solution and increasing the local search power. The simple mechanics of AS create a powerful optimization algorithm that guides solution design while preventing preventing premature convergence. 
+
+The original ACO algorithm was the Ant System (AS) approach \citep{Dorigo1996} which had ants probabilistically follow a pheromone trail along a TSP graph. An ant at node $i$ would chose to move to a neighboring node $j$ using on a transition rule based on the amount of pheromone $\tau_{ij}$ between the node pair. The transition rule, defined as 
+
+\begin{equation}
+p_{ij}=\frac{\tau_{ij}^\alpha\cdot\eta_{ij}^\beta}{\sum_{h\in\Omega}
+	\tau_{ih}^\alpha\cdot\eta_{ih}^\beta}
+\label{eq:AStrans}
+\end{equation}
+
+\noindent where $\eta_{ih}$ is some heuristic information about the preference of node $h$, $\alpha$ and $\beta$ are the influence factors of the pheromones and heuristic, and $\Omega$ is the set of neighbors of node $i$. After each ant created a solution to the TSP, pheromones were updated as
+
+\begin{equation}
+\tau_{ij}=(1-\rho)\cdot\tau_{ij}+\sum_{k=1}^{A}
+	\Delta\tau_{ij}^k
+\label{eq:ASup}
+\end{equation}
+
+\noindent where $\rho$ is the evaporation pheromone evaporation rate, $A$ is the total number of ants, and $\Delta\tau_{ij}^k$ is the amount of pheromone ant $k$ deposits based on the quality of its solution. After the pheromones are updated, the next generation of ants are started, using the new pheromones to guide their transition rules. Ant generations are iterated, progressively reinforcing successful paths, until a convergence criteria or computation time is met. 
+
+\subsection{ACO Extensions}
+
+Since its inception, significant extensions have been made to the original AS algorithm in order to improve solution quality and add multi-objective optimization functionality. Variants such as elitist solution updating (elitist ants), pheromone constraints \citep{Stutzle2000}(add hypercube), and local search and reinitialization \citep{Ashraf2013} aim to improve solution quality and search capability. Multi-objective Ant Colony Optimization (MOACO) extensions such as \citep{Angus2009,Iredi2001} use combinations of multiple heuristics and pheromone trials to encourage ants to explore solutions along a Pareto front. \cite{Garcia-Martinez2007} and \cite{Rada-Vilela2013} provide extensive reviews of MOACO method and applications. 
+
+The proposed SoS design method is a bi-objective optimization between survivability and representative cost. Following the approach used by \cite{Iredi2001}, pheromones for each objective are encoded in $M=(\tau_{ij})$ and $M^{'}=(\tau_{ij}^{'})$ respectively. Solution search is guided along the Pareto front by separating $m$ ants into $p$ colonies of $m/p$ ants and creating composite pheromones that interpolate between objectives. In the most straight-forward implementation, each ant $k$, $k \in [1,m/p]$ in a colony uses weighting factor $\lambda_{k}=\frac{k-1}{m/p-1}$ to determine the influence of each objective. More complicated weighting rules create disjoint or overlapping $\lambda$-intervals between colonies. Regardless of weighting, the transition rule (\ref{eq:AStrans}) is modified to
+
+\begin{equation}
+p_{ij}=\frac{\tau_{ij}^{\lambda_k\alpha}\cdot\tau_{ij}^{'(1-\lambda_k)\alpha}\cdot\eta_{ij}^{\lambda_k\beta}\cdot\eta_{ij}^{'(1-\lambda_k)\beta}}{\sum_{h\in\Omega}\tau_{ih}^{\lambda_k\alpha}\cdot\tau_{ih}^{'(1-\lambda_k)\alpha}\cdot\eta_{ih}^{\lambda_k\beta}\cdot\eta_{ih}^{'(1-\lambda_k)\beta}}
+\label{eq:Bitrans}
+\end{equation}
+
+\noindent where $\eta_{ij}$ and $\eta^{'}_{ij}$ are heuristic information for the first and second objectives respectively. It should be noted that each colony $p$ has separate pheromones $M_p$ and $M^{'}_p$ which ants from that colony use in (\ref{eq:Bitrans}). \cite{Iredi2001} proposed two pheromone update rules of this method: update by origin and update by region of non-dominated front. The former updates only an ant's colony of origin with solution pheromones. The latter updates a colony's pheromones based on a solution's location on the non-dominated front, in effect making colonies responsible for specific solution spaces. The following section will apply elements of these extensions to a create an bi-objective ant colony SoS design exploration method.
+
+
+\section{System of system ACO}
+System of systems design requires significant alteration and extension of the existing ACO methods. The largest alteration is that solutions are composed of multiple interdependent networks instead of the single network solutions of classic approaches. SoS solution generation thus requires each ant to create a network of each system $\psi$ in the SoS $mathcal{S}$. In the proposed method, each system network in the SoS is created independently for each ant's solutions. The composite of these networks can then be evaluated to quantify the performance of the SoS, giving a fitness to the ant's solution. Creating each system network can be split into two steps: structure design and capacity design. 
+
+\subsection{System structure design}
+
+Complications in solution generation arise from differences in SoS architecture design and the TSP network traversal problem. First, SoS's are not well suited for design by a single ant. They often include multiple sources and sinks which must be connected through different system types. This connectivity is directed - sources supply sinks - and branching meaning a lone ant would be unable to create a system without significant network traversal and looping. To address this, the proposed method allows an ant to create multiple branches each time an ant leaves a node. This method has been employed in multi-path routing of wireless sensor networks by \cite{Yang2010}, but is significantly expanded in this application. For each node $i$ in the network containing the SoS, a set of branching pheromones $B$ are stored for the number of branches $b$ an ant may create where $b \in [1,\mathcal{N}_i]$ and $\mathcal{N}_i$ is the number of neighbors of $i$. An ant at node $i$ then choses how many branches $b$ to create using the following transition rule,
+
+\begin{equation}
+p_{ib}=\frac{B_{ib}^{\lambda_k\alpha}\cdot B_{ib}^{'(1-\lambda_k)\alpha}}{\sum_{h\in\mathcal{N}_i}B_{ih}^{\lambda_k\alpha}\cdot B_{ih}^{'(1-\lambda_k)\alpha}}.
+\label{eq:Branch}
+\end{equation}
+
+\noindent Note that unlike the original implementation of bi-criterion ACO, (\ref{eq:Branch}) does not use a heuristic. In testing, no heuristic improved the solution quality or convergence behavior of the algorithm. However, for the remainder of this approach, transition rules will use a single heuristic. The chosen heuristics guide the generation process towards feasible solutions and are not suitable to be assigned to an objective. Further, the complexity of the objective functions makes it difficult to create an informative heuristic. The details of each heuristic will be discussed in Section \ref{s:heur}. 
+
+Once the number of branches is chosen, $b$ directed edges are added to the solution network by applying (\ref{eq:Bitrans}) $b$ times. In Algorithm \ref{al:Nstruct} this process is called antBranch($i$, antID) where antID defines the ant number and colony for calculating $\lambda_k$. Each time (\ref{eq:Bitrans}) is applied, an edge from $i$ to the chosen neighbor $j$ is added to the network $G^\psi$ which defines the structure of system $\psi$. $j$ then removed from the subsequent transition calculations, ensuring that $b$ branches are added in total. In Algorithm \ref{al:Nstruct} this process, adding $b$ directed edges from $i$, is called antNode($i$, $b$, antID) which returns a list of nodes chosen. This process, is repeated for each active branch in a solution generation step, enabling an ant to create complex branching and converging system structures. 
+
+Introducing branching behavior creates difficulty with the termination criteria for an ants solutions. Classic applications to TSP consider a solution completer once all nodes in a network are covered. In SoS design, it may be undesirable to cover all possible nodes due to increased routing cost or the creation of unnecessary system interdependencies. Avoiding this requires a new termination criteria. An obvious approach is to terminate branches of the solution once they encounter a system sink. However, this prevents routing sinks in serial and artificially limits solution freedom. To avoid this, the proposed method uses a consensus-based approach to termination: once all system sinks are included in the solution, branches at node $i$ chose to termination outcome $t$, $t\in[0,1]$ following the transition rule,
+
+\begin{equation}
+p_{it}=\frac{T_{it}^{\lambda_k\alpha}\cdot T_{it}^{'(1-\lambda_k)\alpha}\cdot\zeta_{it}^{\beta}}{\sum_{h\in[0,1]}T_{ih}^{\lambda_k\alpha}\cdot T_{ih}^{'(1-\lambda_k)\alpha}\cdot\zeta_{ih}^\beta}
+\label{eq:Term}
+\end{equation}
+
+\noindent where termination pheromones for $i$ are stored in $T$ and $\zeta$ is the termination heuristic. Probabilistically choosing $t=0$ continues the branch and $t=1$ terminates the branch at node $i$, preventing it from moving to any other nodes. Note that because, branches are prevented from terminating unless all sinks are included in the network, $p_{i1}=0$ until that condition is met. This process, antTermination($i$, antID) causes solution generation to conclude once all branches have been terminated. These steps are combined with the standard ACO transition rule to generate network structures for each system in the SoS. Networks are generated with Algorithm \ref{al:Nstruct} which is initialized by setting a branch at each source node $s$ in system $\psi$. The final step in Algorithm \ref{al:Nstruct}, pruneGraph(), removes branches from graph that do not contribute to a path between sources and sinks. These extra branches are either a remainder from the termination process or small off-shoots paths that go to a non-source, non-sink node and return following the same path. 
+
+\begin{algorithm}
+	\caption{Network structure algorithm}
+	\label{al:Nstruct}
+	\begin{algorithmic}[1]
+		\Procedure{Network Structure}{netStructure($\psi$, antID)}
+		\State Initialize $G^\psi$ as empty network
+		\State $N=s$
+		\State Complete $=0$
+		\While{$not$ Complete}
+		\State $newN=\lbrace\rbrace$
+		\For{each node $i \in N$ }
+		\State $t=$ antTermination($i$, antID)
+		\If{$not$ $t$}
+		\State $b=$ antBranch($i$, antID)
+		\State $n=$ antNode($i$, $b$, ,antID)
+		\State append $n$ to $newN$
+		\EndIf
+		\EndFor
+		\If{$newN$ is empty}
+		\State Complete $=1$
+		\EndIf
+		\State $N=newN$
+		\EndWhile
+		\State pruneGraph($G^\psi$)
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{System capacity design}
+Generating network structures provides new information about emergent interdependence in the SoS. However, understanding how interdependence affects the functionality of the SoS (in this case survivability) requires evaluating flow through the systems. In this paper, flow is addressed through independent min-cost network flow analysis of each system. Flow constraints due to interdependent routings are captured by edge capacities allocated for each network.   Capacitated networks are developed similarly to the network structure, using pheromones and an adapted transition rule. After Algorithm \ref{al:Nstruct} has completed, the ant choses a capacity $c$ of each network edge $G^\psi_{ij}$ using the transition rule,
+
+\begin{equation}
+p_{ijc}=\frac{C_{ijc}^{\lambda_k\alpha}\cdot C_{ijc}^{'(1-\lambda_k)\alpha}\cdot\xi_{ijc}^{\beta}}{\sum_{h\in\mathcal{C}^{\psi}_{ij}}C_{ijh}^{\lambda_k\alpha}\cdot C_{ijh}^{'(1-\lambda_k)\alpha}\cdot\xi_{ijh}^{\beta}}
+\label{eq:Cap}
+\end{equation}
+
+\noindent where $C$ contains pheromones for capacity transitions, $\xi$ is the capacity heuristic, and $\mathcal{C}^{\psi}$ are the possible edge capacities for system $\psi$. Choosing capacities for each edge in $G^\psi$, sysCapacity($G^\psi$, antID), completes the network for system $\psi$.  
+
+Generating a network routing of system $\psi$ does not guarantee the sink demands are satisfied for that system, only that there is a directed path from the source(s) to sink(s). Further, each ant creates every system of the composite SoS which must have all sink demands satisfied. Initially, the ants will create random solutions to each system with little assurance they will meet the SoS demands. Only accepting feasible solutions to the SoS - which satisfy all sink demands - into the solution pool helps the algorithm learn to create feasible solutions. Feasibility of $\mathcal{S}$ is checked with sinkSat($\mathcal{S}$) which evaluates if the sink demands in each system are met and propagates demand failure through network interdependencies. Including the feasibility criteria, the SoS solution process is defined in Algorithm \ref{al:SoS}.
+
+\begin{algorithm}
+	\caption{SoS design algorithm}
+	\label{al:SoS}
+	\begin{algorithmic}[1]
+		\Procedure{SoS design}{sosDesign($n$, $p$)}
+		\State satisfied=0
+		\For{each ant $i\in n$ in colony $p$}
+		\State antID=($i$,$p$)
+		\While {$not$ satisfied}		
+		\State Initialize $\mathcal{S}_{\text{antID}}$ as empty
+		\For{each system $\psi \in \mathcal{S}$}
+		\State $G^\psi=$ netStructure($\psi$, antID)
+		\State $G^\psi_c=$ sysCapacity($G^\psi$, antID)
+		\State add $G^\psi_c$ to $\mathcal{S}_{\text{antID}}$
+		\EndFor
+		
+		\State satisfied=sinkSat($\mathcal{S}_{\text{antID}}$)
+		\EndWhile
+		\State Add $\mathcal{S}_{antID}$ to solution pool
+		\EndFor
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{Heuristics} \label{s:heur}
+
+Each transition rule in structure and capacity design steps use a single heuristic or no heuristic in the case of (\ref{eq:Branch}). The heuristics in (\ref{eq:Bitrans}), (\ref{eq:Term}), and (\ref{eq:Cap}) are constructed to guide the generation process toward feasible solutions which satisfies the sink demands of the SoS. Feasibility heuristics were chosen to limit computation time by reducing the number of solutions that did not meet sink demands. Further, the complexity of the objective functions makes it difficult to provide a useful heuristics without considering the other systems in the SoS.
+
+The heuristic for the modified version of (\ref{eq:Bitrans}) is structured to add preference to nodes that are closer to sinks that are not included in the current solution. This not only helps reduce the number of steps the algorithm must complete, it works to prevent cycling behavior. Cycling in solution generation occurs when a cyclic connected path has relatively high pheromone levels through the entire path. It is then possible for the ant to continually travel around the cycle without progressing the overall solution. To mitigate this, the heuristic $\eta$ scales with the number of consecutive iterations in Algorithm \ref{al:Nstruct} that have not added a new node to the network. The heuristic is defined as,
+
+\begin{equation}
+	\eta_{ij}=\frac{NC}{(l_j/d+a)}
+	\label{eq:eta}
+\end{equation}
+
+\noindent where $NC$ is the number of consecutive iterations without added nodes, $l_j$ is the shortest distance from node $j$ to a sink not included in the solution, $d$ is the diameter of $G$, and $a$ is a constant to prevent dividing by $0$ when $j$ is a sink that is not included in the solution. 
+
+The termination heuristic $\zeta$ used in (\ref{eq:Term}) is more straightforward, enforcing the termination criteria - all sinks are included in the solution. Further, only a choice of $t=1$ terminates the branch, $t=0$ has not effect. Thus $\zeta$ may be defined as $\zeta_{i0}=1$ regardless of system state and $\zeta_{i1}$ as,
+
+\begin{equation}
+	\zeta_{i1}=\begin{cases}
+	1 &\text{if all sinks included}\\
+	0 &\text{otherwise.}
+	\end{cases}
+	\label{eq:zeta}
+\end{equation}
+
+The final heuristic used in this method is $\xi$ in (\ref{eq:Cap}) which guides the transition rule for edge capacity. Edge capacity is added once the network structure is known. This allows the capacity heuristic to use the relationship between the source-sink connections in a system that an edge supports. For an edge $ij$, $c^t_{ij}$ is the total demand of sinks that have a path from a sources including $ij$. Similarly, $c^s_{ij}$ is the total magnitude of sources that have a path to a sink including $ij$. The minimum of $c^t_{ij}$ and $c^s_{ij}$ represents the maximum usable capacity of the edge $c^u_{ij}=min(c^t_{ij},c^s_{ij})$. With the goal of meeting sink demand at minimum capacity cost, the heuristic preferences the transition rule towards capacities near $c^u_{ij}$. $\xi_{ijc}$ is calculated as follows,
+
+\begin{equation}
+	\xi_{ijc}=1+\frac{1}{1+|c^u_{ij}-c|}
+	\label{eq:xi}
+\end{equation}
+
+The heuristics discussed in this section have been effective in solving the SoS design problem proposed in this paper. However, there are likely alterations to the feasibility heuristics that will improve solution generation. Additionally, heuristics that support the bi-objective framework in \cite{Iredi2001} could be developed and applied instead of the feasibility approach.
+
+\subsection{SoS pheromone update}
+The final step in the ACO process is updating the pheremone trials of each ant. However, the extensions that have been added to this method, complicate the application of (\ref{eq:ASup}). Before discussing the mechanics of the pheromone update, the exact structure of the pheromones used in the algorithm should be clarified. Because systems are designed independently, each has a separate pheromone structure $P^{\psi}=[\tau,B,T,C]^\psi$ which are used to create the transition rule for an ant creating a solution to system $\psi$. Extending to incorporate bi-objective optimization requires using $P^\psi$ and $P'^{\psi}$ for the first and second objective respectively. Further, following the approach in \cite{Iredi2001} each colony $p$ has unique pheromone structure $P^\psi_p$ and $P'^{\psi}_p$ for each system in $\mathcal{S}$. Ants from that colony $p$ use their respective structure during their generation process.  
+
+The proposed method adapts the generic update rule with a normalized quality function and elitist pheromone updates. Colony's pheromone structures are only updated by ants from that colony which increasing selection pressure and encourages search in less dense regions of the non-dominated front \citep{Iredi2001}. These adaptations provide two benefits: Normalization allows pheromones to be updated relative to their solution quality while maintaining stable pheromone scale, similar to \cite{Blum2004}. Elitist updating accelerates solution convergence and improves solution quality by only allowing non-dominated solutions in a generation to update their pheromones \citep{Iredi2001}. 
+
+After each ant in the generation creates feasible SoS solutions, solutions are evaluated by the survivability and representative cost objective functions. Non-dominated solutions $s_{upd}$ are selected to update their pheromone trails, where $s_{upd,i}=[s_i,s'_i]$. Solution scores are normalized to the global best objective score $s_{best}$ and $s'_{best}$ respectively by the quality functions $F(s)$ and $F'(s')$. For the maximum survivability, minimum cost problem the quality functions are defined as,
+
+\begin{equation}
+	\begin{split}
+		F(s)=\frac{s}{s_{best}}\\
+		F'(s')=\frac{s'_{best}}{s'}.
+	\end{split}
+	\label{eq:Qual}
+\end{equation}
+
+The pheromone update increments, $\theta_i$ and $\theta'_i$, for ant $i$ with fitness $s_i$, are normalized to the total quality of all updating solutions. Pheromones increments are defined as,
+
+\begin{equation}
+\begin{split}
+\theta_i=\frac{F(s_i)}{\sum_{a\in s_{upd}}^{}F(a)}\\
+\theta'_i=\frac{F'(s'_i)}{\sum_{a\in s_{upd}}^{}F'(a)}.
+\end{split}
+\label{eq:Inc}
+\end{equation}
+
+The original pheromone update, (\ref{eq:ASup}), can be generalized to the any pheromone in colony $p$, $X_p$ as
+
+\begin{equation}
+	X_p \leftarrow (1-\rho)X_p+\rho\sum_{s \in s_{upd}}^{}\theta_s\cdot\delta(p,p_s)
+	\label{eq:Up}
+\end{equation} 
+
+\noindent where $\rho$ is the pheromone dissipation rate, $p_s$ is the colony of origin for the ant producing $s$, and $\delta$ is the Dirac delta function. 
+
+Each pheromone in the pheromone structures are updated using (\ref{eq:Up}), increasing system traits that appear in the non-dominated solutions. For example, if an ant from colony $p$ has edge $ij$ in $G^\psi$ with capacity $c$, $C^\psi_{p,ijc}$ and $C^{'\psi}_{p,ijc}$ are updated by $\theta$ and $\theta'$ respectively. This process is straightforward for edge, branches, and capacities. However, it is not obvious how to chose which termination pheromones to update because there is no way to identify which nodes branches were terminated at based on the network solution. Instead, nodes with out-degree $k^{out}=0$ are considered as terminated nodes, $t=1$. Treating termination this way creates regions of the network that have high termination probabilities when they are not often included in high fitness solutions. Ants are likely to end branches in these regions, while the branches are likely to continue in regions associated with successful solutions. 
+
+The update procedure described in this section is conducted after every ant has created feasible solutions to the SoS. This completes the SoS ACO, described in Algorithm \ref{al:ACO}, where updatePheromones($S$) encapsulates pheromone updating and $S$ is the generation's solution pool. Convergence criteria can either by computation time, Pareto front characteristics, or based on some analysis of the pheromone structures (see \cite{Stutzle2000} for pheromone convergence analysis).
+
+
+\begin{algorithm}
+	\caption{SoS ACO algorithm}
+	\label{al:ACO}
+	\begin{algorithmic}[1]
+		\Procedure{ACO}{ACO($n$, $p$)}
+		\While {Some convergence critera $not$ satisfied}		
+		\State $S$=sosDesign($n$, $p$)
+		\State updatePheromones($S$)
+		\EndWhile
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
+
+
+
+\section{Results}
+
+\section{Discussion}
+
+\section{Conclusion}
+
+Ants\\
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+\renewcommand\bibname{References}
+\bibliographystyle{elsarticle-harv} 
+\bibliography{References}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+%%\begin{thebibliography}{00}
+
+%% \bibitem[Author(year)]{label}
+%% Text of bibliographic item
+
+%\bibitem[ ()]{}
+
+%%\end{thebibliography}
+\end{document}
+
+\endinput
+%%
+%% End of file `elsarticle-template-harv.tex'.

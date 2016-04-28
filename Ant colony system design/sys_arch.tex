@@ -1,0 +1,604 @@
+%% 
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+
+\documentclass[preprint,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%%\documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+\usepackage{amsthm}
+
+\usepackage{amsmath}
+
+\usepackage[font=small,skip=3pt]{subcaption}
+\usepackage{natbib}  
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+\journal{Ocean Engineering}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{Modeling and studying system architecture design relationships in early-stage ship design using networks}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \address[label1]{}
+%% \address[label2]{}
+
+\author[1]{Colin P. F. Shields}
+\author[1]{ Dr. Douglas T. Rigterink} 
+\author[1]{ Dr. David J. Singer } 
+\address[1]{University of Michigan, United States}
+
+\begin{abstract}
+%% Text of abstract
+Ship system architecture design is traditionally split between the functional and the physical definition of system components and supporting distribution system. Integrating these two aspects are required for understanding the interdependencies between a vessel's capability and its physical attributes. However, functional requirements such as powering, installed capability, and survivability are specified in early-stage ship design and the physical definition is developed in detailed design and construction. This creates a design gap, where the physical system architecture cannot be considered when specifying the functional requirements. The lack of information about the functional-physical system architecture relationship can make trade-off analysis difficult and decision-making ill-informed. To address this problem, we propose an early-stage design perspective for modeling and studying ship system architecture. Our approach uses scalable network representations of vessels and systems to stochastically generate large numbers of physical system architecture designs which can be evaluated as ensembles. Ensemble characteristics are then used to understand interdependencies between early-stage design decisions and later physical outcomes. We demonstrate that our approach is effective at using concept-level vessel knowledge to inform future system architecture characteristics, and show the method can be used to understand the complex system architecture design relationship.
+
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+System architecture \sep network theory \sep early-stage ship design
+
+\end{keyword}
+
+\end{frontmatter}
+
+%% \linenumbers
+
+%% main text
+\section{Introduction} \label{sec:intro}
+
+Advances in technology onboard naval vessels promise improved capability, mission effectiveness, survivability, and fleet support \citep{Piff2013,Doerry2014}. Realizing these benefits requires understanding how these technologies and their supporting systems integrate into the vessel design \citep{Kassel2010,Chalfant2015}. The \textit{system architecture} is the combination of onboard components, supporting distribution system, and system behavior which define the vessel function \citep{Jaakkola2011}. The \textit{physical system architecture} describes only the components and distribution system, but has a critical role in vessel survivability \citep{Doerry2004,Doerry2007,Kassel2010,Trapp2015}, producibility \citep{Keane2011,Keane2015}, and cost \citep{Miroyannis2006,Dobson2014}. The design relationship between a system architecture's function and its physical form is an interdependent and complex problem that cannot be addressed through current methods. However, understanding this complex relationship is required for trade-off analysis and decision-making activities in early-stage ship design (ESSD) \citep{Brown2015}. In this paper, the authors show how the functional-physical system architecture relationship can be approached using network modeling schema and a stochastic generation method.
+
+The development of system architecture is traditionally a split discipline in naval design. Initially, required functions are defined through functional modeling in concept design \citep{Andrews1981,Chandrasegaran2013,Brown2015,Chalfant2015}. Then, in detailed design the supporting physical system architecture is developed \citep{Chandrasegaran2013}. This means the outcomes of decisions about the system architecture cannot be understood until later stages of the design when sufficient detail is available for testing or simulation. However, these details are predicated on concept design decisions about vessel mission, sizing and layout. Thus, there is little opportunity to use feedback about the physical form until late stage design when system architecture functionality is fixed and significant cost has been committed \citep{Ullman1992,Mavris2000a,Kassel2010}. Addressing this requires designers to understand how the function of the system architecture influences the physical system architecture earlier, narrowing the functional-physical design gap.
+
+
+Currently ship designers have two options for addressing the functional-physical system architecture relationship in ESSD. The first option is to reduce the implications of system architecture to parameterization, exemplified by cost estimation \citep{Watson1977,Ross2004}. The parameterization approach is applicable for specific relationships in the design, but requires a representative database of similar vessels to develop. Additionally, parameterization is limiting in ESSD because it only predicts the outcome of a decision without helping the designer understand the design relationship.
+
+The second option for addressing the functional-physical design gap is to use the required functionality to generate computer-aided design (CAD) models of the physical system architecture. This provides a detailed model of the complete system architecture (physical and functional aspects) that can be analyzed to validate function and predict attributes of the physical systems. Efforts in automated distribution system design have been successful at introducing physical system architecture design sooner in the ship design process \citep{Fiedel2011,Chalfant2012,Chalfant2014,Chalfant2015,Chryssostomidis2015,Trapp2015,Dougal2016}. These methods generate physical system architecture models through routing optimization, resource demand satisfaction, and system templates which are then integrated into a larger vessel model. 
+
+However, automated distribution system design approaches are not suitable for ESSD. From a methods perspective, the required product definition for CAD-based design automation is not available in concept design \citep{Mistree1990}. Despite the continual improvement of CAD tools, the information available to use the tools in ESSD is still limited. In the lowest-fidelity applications, distribution system generation methods need specification of components and their usage. In ESSD, providing the necessary physical definition and system loads require a significant amount of design knowledge about vessel geometry, mission, and operations. This is compounded by uncertainties caused by the concurrency of naval design and component development \citep{GovernmentAccountabilityOffice2009,NAVSEA2012,Kassel2010}. The result is that meeting required geometric modeling and design definition requirements can quickly become design drivers \citep{Pitts1970} or lead to decision-making based on poor assumptions.
+
+Automated distribution system design methods also struggle to address the functional-physical relationship from a design process perspective. The goal of addressing system architecture in ESSD is to create information about the functional-physical relationship to inform decision-making. Automated approaches bias this relationship by generating physical definitions through optimizations and system templates. Similar to parameterization, this helps predict outcomes of the functional-physical relationship, but does not help understand how or why the relationship caused the outcome. To be more concrete, these approaches produce detailed solutions to well-defined system architecture design problems at specific modeling fidelity. The resulting physical system architectures and outcomes are then used as a basis for decision-making. However, early in the design process the design problem is changing and being constantly developed \citep{Andrews1981}. Further, the early-stage design activities have fidelity ranging from paper sketches to CAD representations of vessel layout \citep{Andrews1981,Chandrasegaran2013}. Thus, optimal solutions to fixed system architecture problem are poor grounds for understanding the possible physical-functional relationships. Instead, bridging the functional-physical gap must be agnostic to the design problem definition and scalable with changing design fidelity.
+
+In this paper, therefore, we focus on understanding the relationship between system architecture and its physical form without assuming design problem specifics or level of design fidelity. This requires bridging the functional-physical gap using only the information traditionally available in vessel concept design while maintaining scalability through the entire process. Network-based methods allow vessels layout and functional aspects of system architecture (component existence and general connectivity) to be represented at a scalable level of detail \citep{VanOers2011,Gillespie2012,Rigterink2014,Dellsy2015}. The authors propose that these network representations can be used with stochastic system routing methods to generate models of the physical system architecture. Large sets of stochastically generated architectures can then be evaluated to probabilistically explore the functional-physical relationship. To the authors' knowledge, this approach has not been attempted in the previous literature, but provides a promising step towards understanding the role of system architecture in vessel design.
+
+
+The remainder of this paper is structured as follows: a network representation of vessel configuration and system architecture is discussed. The physical system architecture generation method is presented and a notional vessel is used to demonstrate the method. The paper concludes with a discussion of results and future work. 
+
+\section{Methodology}
+In this section, a short review of network theory is provided followed by a description of the methods that will be used in this paper. Then an application of the proposed methods will be presented.
+
+\subsection{Vessel and System Network Representations} 
+Network based representations of vessels and systems have been shown to enable novel analysis and synthesis methods while requiring minimal designer input outside of traditional ESSD activities. Efforts to introduce system architecture and vessel arrangements in concept design have employed network representations to model geometric structure \citep{Gillespie2012,VanOers2011,VanOers2012} and systems \citep{Rigterink2014,Shields2015,Dellsy2015}. Networks, or graphs, are a collection of objects, called nodes, and the connections between them, called edges \citep{Newman2003}. 
+
+Network theory is a broad discipline that studies the structure of networks to help understand the behavior of the system of objects they represent \citep{Newman2003,Newman2010}. This paper uses simplex and multiplex networks to represent vessel geometry and system connectivity respectively. Figure \ref{net:simp} is an example of a simplex network and its adjacency matrix $A$, the mathematical definition of that network. The adjacency matrix is an $n\times n$ matrix where $n$ is the number of nodes in the network. The elements of $A$ denote the network edges: $A_{ij}=1$ if an edge exists between node $i$ and $j$, otherwise $A_{ij}=0$. In this case, the nodes of the network cannot have self-edges and edges are reciprocal so $A_{ii}=0$ for all $i$ and $A$ is symmetric.
+
+\begin{figure}
+	\begin{minipage}{.49\linewidth}
+		\centering
+		\includegraphics[scale=.7]{basicnetwork}
+		\subcaption{Simplex network. }
+		\label{net:simp}
+	\end{minipage}%\\[1ex]
+	\begin{minipage}{.49\linewidth}
+		\centering
+		\includegraphics[scale=.24]{multiplex}
+		\subcaption{Multiplex network \citep{Gomez2013}. }
+		\label{net:multi}
+	\end{minipage}
+	\caption{Examples of simplex and multiplex networks. \textbf{\ref{net:simp}} is a simplex network example and corresponding adjacency matrix $A$ where edges are denoted $A_{ij}=1$. \textbf{\ref{net:multi}} is a multiplex network with $M=2$ layers. Nodes are the same in each layer, but the connectivity within layers are independent of other layers. }
+	
+	\label{fig:net}	
+\end{figure}
+
+Multiplex networks, demonstrated in Figure \ref{net:multi}, are a layering of the simplexes, or a network of networks. In a multiplex network with $M$ layers, each layer $l$ is an $n\times n$ adjacency matrix $A_l$ defining the same set of $n$ nodes. Edges within each layer represent a distinct type of connection between nodes. Multiplex representations provide additional information about the interdependencies between each represented system layer that would not be captured through individual simplexes.
+
+
+\subsubsection{Vessel Geometry Simplex Network} \label{sec:vesselmodel}
+
+\noindent Networks provide a vessel representation that has been used for design analysis \citep{Gillespie2012,Gillespie2013,Rigterink2014,Dellsy2015}, arrangement generation \citep{VanOers2011,VanOers2012} and distribution system generation \citep{Fiedel2011}. Though the fidelity and terminology of the cited works' network models vary, they stem from adjacencies of unit volumes, areas, or compartments. 
+
+In a network representation, each spatial modeling unit is a node in the network simplex representing the vessel. Adjacency to other units are represented by edges. The network representation is a a surrogate for precise geometric definitions that does not require extensive hullform and compartment modeling. This allows the network to model the vessel at scalable levels of design detail by altering the density of the network and what each node represents.
+
+%\begin{figure}
+%	
+%	\begin{minipage}{1\linewidth}
+%		\centering
+%		\includegraphics[scale=.5]{gillespieship}
+%		\subcaption{Structural zones, \citep{Gillespie2012}}
+%		\label{vox:gill}
+%	\end{minipage}\\[1ex]%
+%	\begin{minipage}{1\linewidth}
+%		\centering
+%		\includegraphics[scale=.3]{bartshipsmall}
+%		\subcaption{Unit length volumes, \citep{VanOers2011}}
+%		\label{vox:bartsmall}
+%	\end{minipage}
+%	\caption{Examples of vessel representations using unit volumes of varying size}
+%	\label{fig:vox}
+%\end{figure}
+
+%\begin{figure}
+%	
+%	\begin{minipage}{.5\linewidth}
+%		\centering
+%		\includegraphics[scale=.5]{gillespieship}
+%		\subcaption{Structural zones, \citep{Gillespie2012}}
+%		\label{vox:gill}
+%	\end{minipage}%
+%	\begin{minipage}{.5\linewidth}
+%		\centering
+%		\includegraphics[scale=.5]{bartship}
+%		\subcaption{Compartments, \citep{VanOers2012}}
+%		\label{vox:bart}
+%	\end{minipage}\\[1ex]
+%	\begin{minipage}{\linewidth}
+%		\centering
+%		\includegraphics[scale=.5]{bartshipsmall}
+%		\subcaption{Unit length volumes, \citep{VanOers2011}}
+%		\label{vox:bartsmall}
+%	\end{minipage}
+%	\caption{Examples of vessel representations using unit volumes of varying size}
+%	\label{fig:vox}
+%\end{figure}
+
+
+
+Networks representing the vessel geometry can also be altered to represent changing geometry through removal of nodes or edges. This is demonstrated in Figure \ref{fig:comp} which shows how changes in a physical arrangement of compartments are represented in a network. 
+
+\begin{figure}
+	\begin{minipage}{.32\linewidth}
+		\centering
+		\includegraphics[scale=.35]{spatial}
+		\subcaption{Network}
+		\label{comp:full}
+	\end{minipage}
+	\begin{minipage}{.33\linewidth}
+		\centering
+		\includegraphics[scale=.35]{spatial_erem}
+		\subcaption{Edge removal}
+		\label{comp:e}
+	\end{minipage}
+	\begin{minipage}{.33\linewidth}
+		\centering
+		\includegraphics[scale=.35]{spatial_nrem}
+		\subcaption{Node removal}
+		\label{comp:n}
+	\end{minipage}\\[1ex]
+	\caption{Demonstration of the vessel network representation. \textbf{\ref{comp:full}} shows four adjacent, connected compartments (\textit{blue}) with the network representation overlaid (\textit{red}). \textbf{\ref{comp:e}} and \textbf{\ref{comp:n}} show the removal of connections and compartments with the corresponding network change.}
+	\label{fig:comp}
+\end{figure}
+
+In the most basic representation the vessel simplex only defines adjacencies, but it can extended to other characteristics of the vessel geometry. Distance between compartments can be stored on edges, areas or volumes can be stored on nodes, or elements can be added and removed based on interdependent aspects of the design.
+
+
+\subsubsection{System Connectivity Multiplex Network} \label{sec:sysmodel}
+System component connectivity can be described similarly to the geometric relationship within the vessel. In the system representation, system components are represented as nodes and the intra-system connections between components are edges \citep{Rigterink2014,Dellsy2015}. Following the convention of previous work, systems in the vessel are defined by resource (i.e. electrical power or chill water) and components are sources or sinks of these resources.
+
+Using the multiplex network structure, each system is represented in a separate simplex layer, which contain nodes representing \textit{all} components within the vessel. Edges within a layer denote source-sink connectivity for the represented system. For example, a node representing a generator set (source) has edges between itself and the nodes of all components that use the electrical power it generates (sinks). Figure \ref{fig:mplex} demonstrates a two system multiplex.
+
+\begin{figure}
+	\begin{minipage}{.45\linewidth}
+		\centering
+		\includegraphics[scale=.4,trim={1.5cm 1cm 1.5cm 1cm},clip]{c_sys}
+		\subcaption{Chill water}
+		\label{mplex:c}
+	\end{minipage}
+	\begin{minipage}{.45\linewidth}
+		\centering
+		\includegraphics[scale=.4,trim={1.5cm 1cm 1.5cm 1cm},clip]{p_sys}
+		\subcaption{Electrical power}
+		\label{mplex:p}
+	\end{minipage}\\[1ex]
+	\caption{Multiplex representation for chill water (\textbf{\ref{mplex:c}}) and electrical power (\textbf{\ref{mplex:p}}) system connectivity. All components are included in each simplex, but edges in a simplex are independent of other layer. }
+	\label{fig:mplex}
+\end{figure}
+
+
+
+The multiplex system representation requires a small amount of additional input from the designer. In concept design, the gross system components are known, but the sink-source relationships may not be. However, creating those relationships only entails a rough allocation of connectivity. Further, connectivity is often defined by other ESSD information including general zoning concepts, bulkhead locations, and component proximity. 
+
+Representing the non-geometric connectivity relationships allows the system network to scale with additional components or increased component detail. For example, edges in the multiplex could be weighted to represented system loads once they are estimated by the designer. The following section presents an algorithm for converting the system knowledge encoded in the multiplex into information about the physical system architecture.
+
+
+
+
+\subsection{Physical System Architecture Translation} \label{sec:algorithm}
+
+In this section, the vessel geometry and system connectivity networks will be used to stochastically generate physical system architectures. Physical system architectures can be seen as a translation problem: Given a simplex $V$ representing the geometric relationships in the vessel and a multiplex $S$ representing connectivity of systems, system architecture is a set of paths $G$ through $V$ that satisfy the edges in $S$. In other words, the physical system architecture is a realization of distribution system routings through the vessel that support required component relations. However, for a component connectivity, there may be many possible routing combinations that satisfy the relationships. The proposed physical system architecture translation (PSAT) algorithm  generates routing through the geometric relationships of the vessel $V$ that satisfy the system connectivity relationships $S$.   
+
+
+The PSAT algorithm is initialized by the user assigning component nodes in $S$ to location nodes $V$. This is defined as component $i$ in $S$ mapping to a node in $V$, which is stored as $V^i$. Next, for each edge $S_{ij,l}$, routings are found between $V^i$ and $V^j$ using sets of disjoint paths in $V$. Disjoint paths between nodes through the network share only a starting and end point. All shortest paths between $V^i$ and $V^j$ are found using Dijkstra's network based shortest paths algorithm \citep{Dijkstra1959}. Once shortest paths have been enumerated, they are sorted into a list of sets of disjoint paths. The routing is then randomly selected from this list. The path enumeration and routing selection process is demonstrated in Figure \ref{fig:r_ex}. Selected routes are stored in an array of routing definitions $G$ where $G_{ij,l}$ is the set of edges defining the routing between components $i$ and $j$ for multiplex layer $l$. This process is completed for each edge in $S$, completing the system translation. The PSAT algorithm is described in Figure \ref{fig:satrans}. 
+
+\begin{figure*}[t]
+	\begin{minipage}{.33\linewidth}
+		\centering
+		\includegraphics[scale=.4]{route_ex_1}
+		\subcaption{Connectivity}
+		\label{r_ex:1}
+	\end{minipage}%\\[1ex]
+	\begin{minipage}{.33\linewidth}
+		\centering
+		\includegraphics[scale=.4]{route_ex_2}
+		\subcaption{Possible routes}
+		\label{r_ex:2}
+	\end{minipage}%\\[1ex]
+	\begin{minipage}{.33\linewidth}
+		\centering
+		\includegraphics[scale=.4]{route_ex_3}
+		\subcaption{Chosen shortest path}
+		\label{r_ex:3}
+	\end{minipage}
+	
+	\caption{Demonstration of PSAT algorithm route generation process. \textbf{\ref{r_ex:1}} is a visualization of a desired system connectivity in $S$ on $V$. \textbf{\ref{r_ex:2}} shows possible edges for the shortest path routings shown in gray. \textbf{\ref{r_ex:3}} demonstrates the random selection of a routing (\textit{blue}) from the possible paths.}
+	\label{fig:r_ex}
+\end{figure*}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=.4]{sa_trans_v2}
+	\caption{Process flow description of the physical system architecture translation algorithm. }
+	\label{fig:satrans}
+\end{figure}
+
+
+The random selection of disjoint paths is a noticeable departure from current system architecture design methods. Optimization and template-based methods prescribe architectures using best-practices implemented through system templates and fitness functions. This limits the modeling and analysis perspective to a specific design problem. Stochastic generation of architectures places significance on statistical characteristics of the functional-physical relationship. This reveals new information about how the design relationship and corresponding outcomes probabilistically develop as opposed to presenting a set of possible optima.
+
+\subsection{Application of the PSAT Algorithm} \label{sec:application}
+In this section, the PSAT algorithm is applied to a notional concept design, illustrating its operation and how the resulting physical system architecture data can be used. 
+
+Recent studies in reducing vessel costs have demonstrated a strong correlation between construction cost and production time to outfit density \citep{Keane2011,Keane2015}. The studies focused on evaluated basic ship outfit density - light ship weight minus ship structure weight divided by total volume \citep{Keane2015} - which is a difficult metric to generate in ESSD. Further, the outfit density metric does not provide an indicator of how outfit density is distributed throughout the vessel. Without this type of information, the designer is left with only a rule of thumb; make the vessel larger. However, if more detailed information was available in ESSD, designers could better understand how component layout impacts future vessel cost and the relative difficulty of detailed design and construction work.
+
+Using the PSAT algorithm, basic vessel definition can be used to generate a distribution of relative outfit density within the vessel. The notional vessels in Figure \ref{ship:case1}-\subref{ship:case3} are structural zone models similar to those in \cite{Gillespie2013}. The grid layout of $V$ has been altered to reflect the placement of three watertight bulkheads which cannot be penetrated by the physical system architecture. The two-dimensional representation was chosen for ease of demonstration and visualization of the PSAT algorithm. However, the geometric network is readily extended to three-dimensions by adding additional nodes and edges to represent transverse zones. 
+
+%\begin{figure*}
+%	\centering
+%	\begin{subfigure}{.65\linewidth}
+%		\centering
+%		\includegraphics[scale=0.23,trim={0cm 1cm 0cm 0cm},clip]{simpleship2d_v3_3b}
+%		\caption{Structural zone model}
+%		\label{ship:zone}
+%	\end{subfigure}
+%	\begin{subfigure}{.33\linewidth}
+%		\centering
+%		\includegraphics[scale=0.3,trim={0cm 0cm 0cm 0cm},clip]{simpleship_net_labeled}
+%		\caption{Network representation $V$}
+%		\label{ship:net}
+%	\end{subfigure}
+%	
+%	\caption{Vessel model and corresponding network representation. \textbf{\ref{ship:zone})} is the structural zone model. System demarcations show component location and resource usage. Watertight bulkheads are marked in red and the damage control deck is in blue. Every component is included in the human movement system which not shown in the system demarcations. \textbf{\ref{ship:net})} Network representation $V$ of zonal geometry, component installations are marked in red. \textbf{Abbreviations:} \texttt{NAME\_x} - component number; \texttt{Def\_x} - defense system component; \texttt{Mech\_x} - mechanical component; \texttt{CIC\_x} - combat information center; \texttt{PR\_MVR} - prime mover.}
+%	\label{fig:ship}
+%\end{figure*}
+
+
+%\begin{figure*}
+%	\centering
+%	\begin{subfigure}{.65\linewidth}
+%		\centering
+%		\includegraphics[scale=0.23,trim={0cm 1cm 0cm 0cm},clip]{simpleship2d_v3_3b}
+%		\caption{Structural zone model}
+%		\label{ship:zone}
+%	\end{subfigure}
+%	\begin{subfigure}{.33\linewidth}
+%		\centering
+%		\includegraphics[scale=0.22,trim={4cm 4cm 4cm 2cm},clip]{simpleship_net}
+%		\caption{Network representation $V$}
+%		\label{ship:net}
+%	\end{subfigure}
+%
+%	\caption{Vessel model and corresponding network representation. \textbf{\ref{ship:zone})} is the structural zone model. System demarcations show component location and resource usage. Watertight bulkheads are marked in red and the damage control deck is in blue. Every component is included in the human movement system which not shown in the system demarcations. \textbf{\ref{ship:net})} Network representation $V$ of zonal geometry, component installations are marked in red. \textbf{Abbreviations:} \texttt{NAME\_x} - component number; \texttt{Def\_x} - defense system component; \texttt{Mech\_x} - mechanical component; \texttt{CIC\_x} - combat information center; \texttt{PR\_MVR} - prime mover.}
+%	\label{fig:ship}
+%\end{figure*}
+
+%\begin{figure*}
+%	\centering
+%	\begin{minipage}{.65\linewidth}
+%		\centering
+%		\includegraphics[scale=0.24,trim={0cm 1cm 0cm 0cm},clip]{simpleship2d_v3_3b}
+%		\subcaption{Structral zone model}
+%		\label{ship:zone}
+%	\end{minipage}%\\[1ex]
+%	\begin{minipage}{.35\linewidth}
+%		\centering
+%		\includegraphics[scale=0.22,trim={4cm 4cm 4cm 2cm},clip]{simpleship_net}
+%		\subcaption{Network representation $V$}
+%		\label{ship:net}
+%	\end{minipage}
+%	
+%	\caption{Vessel model and corresponding network representation. \textbf{\ref{ship:zone})} Structural zones with system demarcations and watertight bulkheads marked red. Every component is included in the human movement system which not shown in the system demarcations. \textbf{\ref{ship:net})} Network representation $V$ of zonal geometry, component installations are marked in red. \textbf{Abbreviations:} \texttt{NAME\_x} - component number; \texttt{Def\_x} - defense system component; \texttt{Mech\_x} - mechanical component; \texttt{CIC\_x} - combat information center; \texttt{PR\_MVR} - prime mover.}
+%	\label{fig:ship}
+%\end{figure*}
+
+\begin{figure*}
+	\centering
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[scale=0.18,trim={0cm 0cm 0cm 0cm},clip]{case_1}
+		\subcaption{Vessel Configuration 1: Structural zone model with component locations and corresponding network representation $V$ (components shown in red) for naval vessel concept. System demarcations show component location and resource usage, every component is included in the human movement system which not shown in the system demarcations}
+		\label{ship:case1}
+	\end{minipage}\\[1ex]
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[scale=0.18,trim={0cm 0cm 0cm 0cm},clip]{case_2}
+		\subcaption{Vessel Configuration 2: \texttt{AUX} component is moved to the same zone as \texttt{MAIN} component.}
+		\label{ship:case2}
+	\end{minipage}\\[1ex]
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[scale=0.18,trim={0cm 0cm 0cm 0cm},clip]{case_3}
+		\subcaption{Vessel Configuration 3: Watertight bulkheads between zones at the bottom deck are removed to allow longitudinal system routings.}
+		\label{ship:case3}
+	\end{minipage}\\[2ex]
+	\begin{minipage}{1\linewidth}
+		\centering	
+		\begin{minipage}{.24\linewidth}
+			\centering
+			\includegraphics[scale=.26,trim={1.5cm 1.5cm 1.5cm 1cm},clip]{p_sys}
+			\label{sys:p}
+		\end{minipage}
+		\begin{minipage}{.24\linewidth}
+			\centering
+			\includegraphics[scale=.26,trim={1.5cm 1.5cm 1.5cm 1cm},clip]{em_sys}
+			\label{sys:em}
+		\end{minipage}%\\[1ex]
+		\begin{minipage}{.24\linewidth}
+			\centering
+			\includegraphics[scale=.26,trim={1.5cm 1.5cm 1.5cm 1cm},clip]{c_sys}
+			\label{sys:c}
+		\end{minipage}
+		\begin{minipage}{.24\linewidth}
+			\centering
+			\includegraphics[scale=.26,trim={1.5cm 1.5cm 1.5cm 1cm},clip]{i_sys}
+			\label{sys:i}
+		\end{minipage}
+		\subcaption{System connectivities $S$ between components in the vessel models. In order from left to right: \textbf{\textit{red}} - power system; \textbf{\textit{black}} - dedicated prime mover power; \textbf{\textit{blue}} - cooling system; \textbf{\textit{green}} - information exchange system. Human movement connectivity is not included, but is a fully connected network.}
+		\label{ship:sys}
+	\end{minipage}%\\[1ex]
+	
+	\caption{Vessel and system models, \textbf{\ref{ship:case1}}-\textbf{\ref{ship:case3}} and \textbf{\ref{ship:sys}} respectively, for the PSAT algorithm application cases.}
+	\label{fig:ship}
+\end{figure*}
+
+Following a generic system architecture concept, relationships between components can be identified. Primarily all components need electrical power from the main and auxiliary generators. Specific components require chill water for cooling and others exchange information for vessel operation. A dedicated power connection from the main and auxiliary generators to the prime mover is included for emergency operations. Finally, personnel must be able to egress throughout the entire vessel which requires connections from each component to all other component. The system connectivity multiplex $S$ for the vessel is shown in Figure \ref{ship:sys}.
+
+%\begin{figure*}[h]
+%	\begin{minipage}{.24\linewidth}
+%		\centering
+%		\includegraphics[scale=.3,trim={1cm 1cm 1cm 1cm},clip]{p_sys}
+%		\label{sys:p}
+%	\end{minipage}
+%	\begin{minipage}{.24\linewidth}
+%		\centering
+%		\includegraphics[scale=.3,trim={1cm 1cm 1cm 1cm},clip]{em_sys}
+%		\label{sys:em}
+%	\end{minipage}%\\[1ex]
+%	\begin{minipage}{.24\linewidth}
+%		\centering
+%		\includegraphics[scale=.3,trim={1cm 1cm 1cm 1cm},clip]{c_sys}
+%		\label{sys:c}
+%	\end{minipage}
+%	\begin{minipage}{.24\linewidth}
+%		\centering
+%		\includegraphics[scale=.3,trim={1cm 1cm 1cm 1cm},clip]{i_sys}
+%		\label{sys:i}
+%	\end{minipage}
+%	\caption{Simplex layers $l$ of the system multiplex $S$ between components in Figure \ref{fig:ship}. Human movement connectivity is not included, but is a fully connected network.}
+%	\label{fig:shipsys}
+%\end{figure*}
+
+%\begin{figure*}[h]
+%	\begin{minipage}{.49\linewidth}
+%		\centering
+%		\includegraphics[scale=.5,trim={1cm 1cm 1cm 1cm},clip]{p_sys}
+%		\subcaption{Electrical power}
+%		\label{sys:p}
+%	\end{minipage}
+%	\begin{minipage}{.49\linewidth}
+%		\centering
+%		\includegraphics[scale=.5,trim={1cm 1cm 1cm 1cm},clip]{em_sys}
+%		\subcaption{Prime mover power}
+%		\label{sys:em}
+%	\end{minipage}\\[2ex]
+%	\begin{minipage}{.49\linewidth}
+%		\centering
+%		\includegraphics[scale=.5,trim={1cm 1cm 1cm 1cm},clip]{c_sys}
+%		\subcaption{Chill water}
+%		\label{sys:c}
+%	\end{minipage}
+%	\begin{minipage}{.49\linewidth}
+%		\centering
+%		\includegraphics[scale=.5,trim={1cm 1cm 1cm 1cm},clip]{i_sys}
+%		\subcaption{Information exchange}
+%		\label{sys:i}
+%	\end{minipage}
+%	\caption{Simplex layers $l$ of the system multiplex $S$ between components in Figure \ref{fig:ship}. Human movement connectivity is not included, but is a fully connected network between components.}
+%	\label{fig:shipsys}
+%\end{figure*}
+
+
+The PSAT algorithm was used to generate physical system architectures for the given geometry and systems. To better match the 2-dimensional structural zone model, each edge translation in the physical system architecture was filtered to only select single path routings. 
+
+Distributed system routing density was evaluated as an indicator of localized outfit density. Instances of the physical system architecture were evaluated in an ensemble to provide the average routing density between each zone in the vessel. The average routing density $r_{i,j}$ of edge $V_{i,j}$ is defined as the average number of system types (i.e. chill water, electrical power) with a path through that edge across the ensemble of instances. This calculation is given by
+
+\begin{equation}
+r_{i,j}=\dfrac{1}{\Omega}\sum_{l=1}^{M}\delta_{ij,l}
+\label{eq:density}
+\end{equation}
+
+\noindent where $\Omega$ is the number of system architecture instances in the ensemble, $M$ is the number of multiplex layers in $S$, and $\delta_{ij,l}=1$ if $V_{ij} \in G_l$ and $\delta_{ij,l}=0$ otherwise. It is important to note that Equation \ref{eq:density} averages the number of layers in the system multiplex with routings through an adjacency in $V$, not the total number of routings between components.
+
+Routing densities across all adjacencies in the vessel can also be analyzed. The mean routing density $\bar{r}$ and routing density variance $\sigma_r$ in the vessel are the expected value and variance of $r_{i,j}$ over all edges, respectively. As metrics $\bar{r}$ and $\sigma_r$ indicate how density is distributed through the vessel. Lower $\bar{r}$ values suggests systems routing in the vessel are separated - different system layers in $S$ do not share routing paths - reducing outfit density. Conversely, higher $\bar{r}$ values indicate different systems are likely to share routings, increasing outfit density. Routing density variance $\sigma_{r}$ measures the spread of routing density. Lower variance suggests $r_{i,j}$ is clustered around $\bar{r}$, or the routing density is evenly distributed throughout the vessel. High variance indicates $r_{i,j}$ is more widely spread around $\bar{r}$ and there areas of relatively high and low routing density.
+
+
+
+\section{Results and Discussion}
+The PSAT algorithm was used to create 50 physical system architectures for each vessel configuration in Figure \ref{fig:ship}. Figure \ref{fig:routedensity} shows the ensemble results of average routing density analysis for the generated architectures. This section will present and discuss results of the analysis, starting with Vessel Configuration 1.
+
+\begin{figure}
+	\centering
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[scale=.33,trim={4cm 4cm 4cm 3cm},clip]{s_org_dense}
+		\subcaption{Vessel Configuration 1: Three watertight bulkheads with \texttt{AUX} and \texttt{MAIN} in separate zones; $\bar{r}=2.17$, $\sigma_r=1.97$.}
+		\label{dense:case1}
+	\end{minipage}\\[1ex]
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[scale=.33,trim={4cm 4cm 4cm 3cm},clip]{s_aux_dense}
+		\subcaption{Vessel Configuration 2: Three watertight bulkheads with \texttt{AUX} and \texttt{MAIN} in the same zone; $\bar{r}=2.11$, $\sigma_r=1.67$.}
+		\label{dense:case2}
+	\end{minipage}\\[1ex]
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[scale=.33,trim={4cm 4cm 4cm 3cm},clip]{s_ring_dense}
+		\subcaption{Vessel Configuration 3: Lowest level of watertight bulkheads removed to allow longitudinal routing, \texttt{AUX} and \texttt{MAIN} in separate zones; $\bar{r}=2.49$, $\sigma_r=0.66$.}
+		\label{dense:case3}
+	\end{minipage}%\\[1ex]
+	
+	\caption{Measure of average distributed system routing density $r_{i,j}$ between structural zones for the vessel cases shown in Figure \ref{fig:ship}. Line width scales with routing density and exact values of $r_{i,j}$ are noted on each edge. Component installations are marked with a red dot. }
+	\label{fig:routedensity}
+\end{figure}  
+
+\subsection{Vessel Configuration 1}
+In Figure \ref{dense:case1}, the distribution of $r_{i,j}$ represents a conventional naval vessel physical system architecture. High routing densities appear in the vertical paths from the main and auxiliary power components and in a longitudinal layer above the damage control deck. The highest possible routing densities, $r_{ij}=5.0$, are located directly above the watertight bulkheads at \texttt{BH\_2} and \texttt{BH\_4}, which separate the only three components with edges in the dedicated prime mover power system (black in Figure \ref{ship:sys}). The fore and aft regions below the damage control deck are the lowest density regions due to the low number of components and limited system connectivities.
+
+Analysis results of Vessel Configuration 1 demonstrate that the PSAT algorithm can generate reasonable physical system architectures given ESSD vessel information. Additionally, the analysis shows the benefit of a probabilistic approach to functional-physical system architecture relationship. Statistical ensemble analysis helps account for uncertainty of future design decisions and lack of early-stage modeling fidelity. As opposed to automated distribution system generation and optimization which present optimal design outcomes, this allows designers to consider how and why the functional-physical relationship may develop over the course of the design process. This is further illustrated by a comparison of results for Vessel Configuration 1 and 2, Figures \ref{ship:case1} and \ref{ship:case2} respectively.
+
+\subsection{Vessel Configuration 2}
+
+Routing density results for Vessel Configuration 2 in Figure \ref{dense:case2} shows the effect of moving the \texttt{AUX} component into the same watertight zone as the \texttt{MAIN} component. As expected, the move increased  routing density in the zone with both \texttt{AUX} and \texttt{MAIN} components while decreasing the density in the zone \texttt{AUX} was removed from. The noticeable differences include an increase in routing density directly above \texttt{AUX} and the reduction of density above \texttt{BH\_4} to $r_{ij}=4.0$ from $5.0$. 
+
+Generally, changing the \texttt{AUX} location decreased the routing density variance across adjacencies in the vessel, at the cost of increased density in a single zone. The observed decrease in variance is driven by the elimination of high density routings between \texttt{BH\_2} and \texttt{BH\_4} above the damage control deck. Further, localized routing density increase in the zone with both components was mitigated by the co-location of \texttt{AUX} and \texttt{MAIN}. Co-location eliminated the prime mover power system routing over \texttt{BH\_4} and allowed the \texttt{AUX}-\texttt{PR\_MVR} and \texttt{MAIN}-\texttt{PR\_MVR} connections to share routings.  
+
+The observed changes in routing density are in large part caused by Equation \ref{eq:density} only counting the types of systems routings on an edges, not the total number of component pair routings. Regardless of the zone \texttt{AUX} is in, the distribution of component locations ensure that electrical power is routing (red in Figure \ref{ship:sys}) throughout the vessel. Thus, moving \texttt{AUX} only significantly effects localized areas and edges with prime mover power system routings. 
+
+Comparing Figure \ref{dense:case1} and \ref{dense:case2} suggests that, aside from a localized change in density, the routings in the overall physical system architecture are largely unchanged by moving the \texttt{AUX} component. This is a different type of conclusion than that of a system optimization approach. Optimized system generation would provide the lowest routing density in both configurations. This information is useful for evaluating what the best case design is, but does not necessarily help the designer understand how changing the configuration will change the system architecture.
+
+The analysis results of the first two vessel configurations show the utility of the proposed method and meet naval architecture intuition for the modeled vessels. However, both configurations are more similar to commercial vessels than naval vessels. Differences between naval system routings and the distribution of routing density discussed so far are indicative of a primary naval system architecture objective, survivability. Noticeably, the ring-bus system layout that is often seen in naval applications \citep{Chryssostomidis2015} is not present. This is a result of the vessel geometry model that prevents \textit{all} systems from routing through the watertight bulkheads. Vessel Configuration 3 in Figure \ref{ship:case3} explores how allowing longitudinal routings below the damage control can model the design implications of a ring-bus.
+
+\subsection{Vessel Configuration 3}
+
+Figure \ref{dense:case3} shows the routing density results for Vessel Configuration 3, where the watertight bulkheads on the lowest deck were been removed. This change allowed longitudinal system routings between components that are not present in the other configurations. The result is a redistribution of routing density from the area above the damage control deck to the new routing paths. While this is apparent in Figure \ref{dense:case3} and meets the expected ring-bus design, the changes routing density illustrate an interesting aspect of the physical system architecture.
+
+Creating the new paths increased the mean routing density $\bar{r}$ to $2.49$, as opposed to $2.17$ in Vessel Configuration 1. On initial inspection, this is surprising because the new paths are expected to alleviate the number of systems forced to route over the separating bulkheads. However, because $r_{i,j}$ is an average of system types, the lower level adjacencies create opportunities for more shared routings without eliminating those that already existed. The exception to this is the prime mover power system which routes along the lowest deck in this configuration, removing the highest density regions of the vessel above \texttt{BH\_2} and \texttt{BH\_4}. The overall result is a higher, but more even balance of routing density across the vessel, which is reflected in the reduction of $\sigma_r$ from $1.97$ to $0.66$.
+
+From an outfit density perspective, the results suggest a ring-bus physical system architecture is more difficult to produce than the alternative, separated configurations. This may be mitigated by the more even distribution of routing density, which eliminated areas of the vessel with all five types of system routings. 
+
+Analysis of the three vessel configurations have demonstrated that the proposed network schema and PSAT algorithm make a possible predictor of outfit density - distribution system routing density - readily available. Given this information, designers could restructure component layout, allow certain bulkhead penetrations, or plan for future design work. Regardless of the resulting design decisions, the designer now has a system architecture metric, a method to interrogate what drives changes in the metric, and physical system architecture instantiations which can be further evaluated. 
+
+%Scalability of the network schema allows traditional ESSD design knowledge to be leveraged for developing new information about the functional-physical system architecture relationship. Additionally, the routing density analysis demonstrates the difference between the proposed approach and automated system design. In an automated approach, the system generation process would have designed towards reduced routing density. The result would likely be a lower average density through the vessel. However, it would not be possible to identify the probabilistic trends of the system architecture and the optimization bias would reduce applicability to other aspects of the system architecture design. In the stochastic approach, the generated physical system architectures can be used to identify the unperturbed relationship between system architecture functionality and its physical definition.
+
+\section{Conclusion}
+
+This paper presents an exploratory perspective and method for addressing the functional-physical system architecture gap in early stage ship design. The proposed network schema can be applied at the initial vessel concept and developed throughout the design process without requiring excessive detail or problem definition. Additionally, the PSAT algorithm can be used to translate vessel knowledge traditionally available early in the design process into information about the system architecture. This maintains the role of early-stage design as an investigation of design relationships as opposed to an exercise in vessel specification. 
+
+The utility of this perspective was demonstrated by evaluating distribution system routing density in three different configurations of a notional concept vessel. The PSAT algorithm was applied to convert the structural zone model of a vessel into ensembles of physical system architectures. The generated ensembles were then evaluated to find the probabilistic density of the architecture between structural zones. The resulting metric, mean distributed system routing density, is suggested as predictor of outfit density between structural zones and illustrates the potential analysis this perspective and methodology provides.  
+
+Extensions to the routing density analysis include route weightings based on estimated component load, density by number of system connectivities, and localized complexity calculation. Variation in the vessel model could consider three-dimension geometries, higher fidelity geometries, and incorporate varying bulkhead permeability based on system routing or bulkhead location. Routings, which were restricted to single shortest paths, could be relaxed to include variation in the number of disjoint paths and random-walk paths. Regardless of the analysis preformed, the application of the PSAT algorithm demonstrates the value of the proposed system architecture perspective. 
+
+Considering a stochastic set of possible outcomes may reveal design relationships that would not be identified through traditional concept design or system optimization methods. Further, this approach is not limited to routing density. System architecture ensembles could be used for simulation to evaluate vessel characteristics like survivability or network analysis to develop statistical models of system architecture. However, even in its most basic form the PSAT algorithm and supporting design perspective provide a powerful and extensible approach for developing system architectures.
+
+The authors hope that the perspective presented here provides designers a reliable way forward when considering system architecture in early-stage ship design. The relationship between desired functional and the physical definitions of the system architecture affects all aspect of the vessel. Understanding this relationship sooner in the design process is a critical step in trade-off analysis and decision-making that can shape ultimate vessel performance. 
+
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+
+
+\section*{References}
+\bibliographystyle{elsarticle-num} 
+\bibliography{refs}
+
+
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+%\begin{thebibliography}{00}
+%
+%%% \bibitem{label}
+%%% Text of bibliographic item
+%
+%\bibitem{}
+%
+%\end{thebibliography}
+\end{document}
+\endinput
+%%
+%% End of file `elsarticle-template-num.tex'.

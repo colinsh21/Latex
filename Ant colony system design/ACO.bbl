@@ -1,0 +1,58 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Angus and Woodward(2009)}]{Angus2009}
+Angus, D., Woodward, C., 2009. {Multiple objective ant colony optimisation}.
+  Swarm Intelligence 3~(1), 69--85.
+
+\bibitem[{Ashraf and Mishra(2013)}]{Ashraf2013}
+Ashraf, M., Mishra, R., 2013. {Extended Ant Colony Optimization Algorithm (
+  EACO ) for Efficient Design of Networks}, 939--950.
+
+\bibitem[{Blum and Dorigo(2004)}]{Blum2004}
+Blum, C., Dorigo, M., 2004. {HC–ACO: The hyper-cube framework for Ant Colony
+  Optimization}. IEEE Transactions on Systems, Man, and Cybernetics - Part B:
+  Cybernetics 34~(2), 1161--1172.
+
+\bibitem[{Dorigo and {Di Caro}(1999)}]{Dorigo1999}
+Dorigo, M., {Di Caro}, G., 1999. {The Ant Colony Optimization Meta-Heuristic}.
+  In: New Ideas in Optimization. Vol.~2. pp. 11--32.
+
+\bibitem[{Dorigo et~al.(1996)Dorigo, Maniezzo, and Colorni}]{Dorigo1996}
+Dorigo, M., Maniezzo, V., Colorni, A., 1996. {Ant System : Optimization by a
+  Colony of Cooperating Agents}. IEEE Transactions on Systems, Man, and
+  Cybernetics 26~(1), 29--41.
+
+\bibitem[{Garc{\'{\i}}a-Mart{\'{\i}}nez
+  et~al.(2007)Garc{\'{\i}}a-Mart{\'{\i}}nez, Cord{\'{o}}n, and
+  Herrera}]{Garcia-Martinez2007}
+Garc{\'{\i}}a-Mart{\'{\i}}nez, C., Cord{\'{o}}n, O., Herrera, F., 2007. {A
+  taxonomy and an empirical analysis of multiple objective ant colony
+  optimization algorithms for the bi-criteria TSP}. European Journal of
+  Operational Research 180~(1), 116--148.
+
+\bibitem[{Iredi et~al.(2001)Iredi, Merkle, and Middendorf}]{Iredi2001}
+Iredi, S., Merkle, D., Middendorf, M., 2001. {Bi-criterion optimization with
+  multi colony ant algorithms}. Evolutionary Multi-Criterion Optimization,
+  Proceedings 1993, 359--372.
+
+\bibitem[{Rada-Vilela et~al.(2013)Rada-Vilela, Chica, Cord{\'{o}}n, and
+  Damas}]{Rada-Vilela2013}
+Rada-Vilela, J., Chica, M., Cord{\'{o}}n, {\'{O}}., Damas, S., 2013. {A
+  comparative study of Multi-Objective Ant Colony Optimization algorithms for
+  the Time and Space Assembly Line Balancing Problem}. Applied Soft Computing
+  13~(11), 4370--4382.
+
+\bibitem[{St{\"{u}}tzle and Hoos(2000)}]{Stutzle2000}
+St{\"{u}}tzle, T., Hoos, H.~H., 2000. {MAX-MIN Ant System}. Future Generation
+  Computer Systems 16~(8), 889--914.
+
+\bibitem[{Yang et~al.(2010)Yang, Xu, Zhao, and Xu}]{Yang2010}
+Yang, J., Xu, M., Zhao, W., Xu, B., 2010. {A multipath routing protocol based
+  on clustering and ant colony optimization for wireless sensor networks}.
+  Sensors 10, 4521--4540.
+
+\end{thebibliography}

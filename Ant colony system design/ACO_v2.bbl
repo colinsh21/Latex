@@ -1,0 +1,142 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Gillespie2013}
+J.~W. Gillespie, A.~S. Daniels, D.~J. Singer, {Generating functional
+  complex-based ship arrangements using network partitioning and community
+  preferences}, Ocean Engineering 72 (2013) 107--115.
+\newblock \href {http://dx.doi.org/10.1016/j.oceaneng.2013.05.007}
+  {\path{doi:10.1016/j.oceaneng.2013.05.007}}.
+
+\bibitem{Rigterink2014}
+D.~T. Rigterink, {Methods for Analyzing Early Stage Naval Distributed Systems
+  Designs, Employing Simplex, Multislice, and Multiplex Networks}, Ph.D.
+  thesis, University of Michigan (2014).
+
+\bibitem{Dellsy2015}
+R.~A. Dellsy, M.~C. Parker, D.~T. Rigterink, {Multi-Scale, Interdisciplinary
+  Systems Analysis for Naval Platforms}, Naval Engineers Journal 2~(127) (2015)
+  93--100.
+
+\bibitem{Trapp2015}
+T.~A. Trapp, {Shipboard Integrated Engineering Plant Survivable Network
+  Optimization}, Ph.D. thesis, Massachusetts Institute of Technology (2015).
+
+\bibitem{Newman2003}
+M.~E.~J. Newman, {The structure and function of complex networks}, SIAM Review
+  45~(2) (2003) 167--256.
+
+\bibitem{Gillespie2012}
+J.~W. Gillespie, {A Network Science Approach to Understanding and Generating
+  Ship Arrangements in Early-Stage Design}, Ph.D. thesis, University of
+  Michigan (2012).
+
+\bibitem{Dorigo1996}
+M.~Dorigo, V.~Maniezzo, A.~Colorni, {Ant System : Optimization by a Colony of
+  Cooperating Agents}, IEEE Transactions on Systems, Man, and Cybernetics
+  26~(1) (1996) 29--41.
+
+\bibitem{Dorigo1999}
+M.~Dorigo, G.~{Di Caro}, {The Ant Colony Optimization Meta-Heuristic}, in: New
+  Ideas in Optimization, Vol.~2, 1999, pp. 11--32.
+
+\bibitem{Stutzle2000}
+T.~St{\"{u}}tzle, H.~H. Hoos, {MAX-MIN Ant System}, Future Generation Computer
+  Systems 16~(8) (2000) 889--914.
+\newblock \href {http://dx.doi.org/10.1016/S0167-739X(00)00043-1}
+  {\path{doi:10.1016/S0167-739X(00)00043-1}}.
+
+\bibitem{Ashraf2013}
+M.~Ashraf, R.~Mishra, {Extended Ant Colony Optimization Algorithm ( EACO ) for
+  Efficient Design of Networks} (2013) 939--950.
+
+\bibitem{Angus2009}
+D.~Angus, C.~Woodward, {Multiple objective ant colony optimisation}, Swarm
+  Intelligence 3~(1) (2009) 69--85.
+\newblock \href {http://dx.doi.org/10.1007/s11721-008-0022-4}
+  {\path{doi:10.1007/s11721-008-0022-4}}.
+
+\bibitem{Iredi2001}
+S.~Iredi, D.~Merkle, M.~Middendorf, {Bi-criterion optimization with multi
+  colony ant algorithms}, Evolutionary Multi-Criterion Optimization,
+  Proceedings 1993 (2001) 359--372.
+\newblock \href {http://dx.doi.org/10.1007/3-540-44719-9}
+  {\path{doi:10.1007/3-540-44719-9}}.
+
+\bibitem{Garcia-Martinez2007}
+C.~Garc{\'{i}}a-Mart{\'{i}}nez, O.~Cord{\'{o}}n, F.~Herrera, {A taxonomy and an
+  empirical analysis of multiple objective ant colony optimization algorithms
+  for the bi-criteria TSP}, European Journal of Operational Research 180~(1)
+  (2007) 116--148.
+\newblock \href {http://dx.doi.org/10.1016/j.ejor.2006.03.041}
+  {\path{doi:10.1016/j.ejor.2006.03.041}}.
+
+\bibitem{Rada-Vilela2013}
+J.~Rada-Vilela, M.~Chica, {\'{O}}.~Cord{\'{o}}n, S.~Damas, {A comparative study
+  of Multi-Objective Ant Colony Optimization algorithms for the Time and Space
+  Assembly Line Balancing Problem}, Applied Soft Computing 13~(11) (2013)
+  4370--4382.
+\newblock \href {http://dx.doi.org/10.1016/j.asoc.2013.06.014}
+  {\path{doi:10.1016/j.asoc.2013.06.014}}.
+
+\bibitem{Yang2010}
+J.~Yang, M.~Xu, W.~Zhao, B.~Xu, {A multipath routing protocol based on
+  clustering and ant colony optimization for wireless sensor networks}, Sensors
+  10 (2010) 4521--4540.
+\newblock \href {http://dx.doi.org/10.3390/s100504521}
+  {\path{doi:10.3390/s100504521}}.
+
+\bibitem{Blum2004}
+C.~Blum, M.~Dorigo, {HC–ACO: The hyper-cube framework for Ant Colony
+  Optimization}, IEEE Transactions on Systems, Man, and Cybernetics - Part B:
+  Cybernetics 34~(2) (2004) 1161--1172.
+\newblock \href {http://dx.doi.org/10.1109/TSMCB.2003.821450}
+  {\path{doi:10.1109/TSMCB.2003.821450}}.
+
+\bibitem{Doerry2007}
+N.~Doerry, {Designing electrical power systems for survivability and quality of
+  service}, Naval Engineers Journal 119 (2007) 25--34.
+\newblock \href {http://dx.doi.org/10.1111/j.0028-1425.2007.00017.x}
+  {\path{doi:10.1111/j.0028-1425.2007.00017.x}}.
+
+\bibitem{Kok2012}
+S.~L.~Y. Kok, {Naval Survivability and Susceptibility Reduction Study - Surface
+  Ship}, Ph.D. thesis, Naval Postgraduate School (2012).
+
+\bibitem{Amy2002}
+C.~J.~V. Amy, {Considerations in the design of naval electric power systems.},
+  Power Engineering Society Summer Meeting, 2002 IEEE 1 (2002) 331--335.
+
+\bibitem{Gao2011}
+J.~Gao, S.~V. Buldyrev, H.~E. Stanley, S.~Havlin,
+  \href{http://www.nature.com/doifinder/10.1038/nphys2180}{{Networks formed
+  from interdependent networks}}, Nature Physics 8~(1) (2011) 40--48.
+\newblock \href {http://dx.doi.org/10.1038/nphys2180}
+  {\path{doi:10.1038/nphys2180}}.
+\newline\urlprefix\url{http://www.nature.com/doifinder/10.1038/nphys2180}
+
+\bibitem{Schneider2013}
+C.~M. Schneider, N.~a.~M. Ara{\'{u}}jo, H.~J. Herrmann, {Algorithm to determine
+  the percolation largest component in interconnected networks}, Physical
+  Review E - Statistical, Nonlinear, and Soft Matter Physics 87 (2013) 1--5.
+\newblock \href {http://dx.doi.org/10.1103/PhysRevE.87.043302}
+  {\path{doi:10.1103/PhysRevE.87.043302}}.
+
+\bibitem{Schneider2011}
+C.~M. Schneider, N.~a.~M. Araujo, S.~Havlin, H.~J. Herrmann,
+  \href{http://arxiv.org/abs/1106.3234}{{Towards designing robust coupled
+  networks}}\href {http://arxiv.org/abs/1106.3234} {\path{arXiv:1106.3234}},
+  \href {http://dx.doi.org/10.1038/srep01969} {\path{doi:10.1038/srep01969}}.
+\newline\urlprefix\url{http://arxiv.org/abs/1106.3234}
+
+\bibitem{Brummitt2012}
+C.~D. Brummitt, R.~M.~D. Souza, E.~A. Leicht, {Suppressing cascades of load in
+  interdependent networks} 109~(12).
+\newblock \href {http://dx.doi.org/10.1073/pnas.1110586109}
+  {\path{doi:10.1073/pnas.1110586109}}.
+
+\end{thebibliography}
