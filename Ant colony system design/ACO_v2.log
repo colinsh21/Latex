@@ -1,25 +1,16 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.11.14)  27 APR 2016 11:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.22)  2 MAY 2016 13:43
 entering extended mode
 **ACO_v2.tex
-("C:\Users\colinsh\Box Sync\TeX Documents\Ant colony system design\ACO_v2.tex"
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
+("C:\Users\Mike\Documents\Ph.D\ACO\Latex\Ant colony system design\ACO_v2.tex"
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 68 languages loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\elsarticle\elsarticle.cls"
 Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
 \@bls=\dimen102
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
-File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -34,14 +25,14 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen103
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
@@ -95,7 +86,7 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \@sep=\skip43
 \@@sep=\skip44
 
-("C:\Users\colinsh\Box Sync\TeX Documents\Ant colony system design\ACO_v2.spl")
+("C:\Users\Mike\Documents\Ph.D\ACO\Latex\Ant colony system design\ACO_v2.spl")
 ("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip45
@@ -117,7 +108,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
-Package: amsthm 2004/08/06 v2.20
+Package: amsthm 2009/07/02 v2.20.1
 \thm@style=\toks18
 \thm@bodyfont=\toks19
 \thm@headfont=\toks20
@@ -127,7 +118,7 @@ Package: amsthm 2004/08/06 v2.20
 \thm@postskip=\skip48
 \thm@headsep=\skip49
 \dth@everypar=\toks23
-LaTeX Info: Redefining \qed on input line 283.
+LaTeX Info: Redefining \qed on input line 264.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
@@ -188,13 +179,13 @@ LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
-Package: subcaption 2015/09/15 v1.1-100 Sub-captions (AR)
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
-Package: caption 2015/09/17 v3.3-111 Customizing captions (AR)
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2015/09/20 v1.7-115 caption3 kernel (AR)
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen118
 \captionmargin@=\dimen119
@@ -209,7 +200,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \c@subfigure=\count108
 \c@subtable=\count109
 )
-("C:\Users\colinsh\Box Sync\TeX Documents\Ant colony system design\ACO_v2.aux")
+("C:\Users\Mike\Documents\Ph.D\ACO\Latex\Ant colony system design\ACO_v2.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
@@ -222,6 +213,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
+
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count110
@@ -246,36 +238,47 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 110.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 118.
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] [5]
-
-LaTeX Warning: Reference `al:Nstruct' on page 6 undefined on input line 205.
-
-
-LaTeX Warning: Reference `al:Nstruct' on page 6 undefined on input line 205.
-
-
-LaTeX Warning: Reference `al:Nstruct' on page 6 undefined on input line 214.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 118.
+ [1
 
 
-LaTeX Warning: Reference `al:Nstruct' on page 6 undefined on input line 214.
+{C:/Users/Mike/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] 
+[5] [6]
 
-[6] [7] [8] [9] [10] [11] [12]
-Overfull \hbox (9.88205pt too wide) in paragraph at lines 329--330
+LaTeX Warning: Reference `al:Nstruct' on page 7 undefined on input line 234.
+
+
+LaTeX Warning: Reference `al:Nstruct' on page 7 undefined on input line 234.
+
+[7]
+
+LaTeX Warning: Reference `al:Nstruct' on page 8 undefined on input line 243.
+
+
+LaTeX Warning: Reference `al:Nstruct' on page 8 undefined on input line 243.
+
+[8] [9] [10] [11] [12] [13]
+Overfull \hbox (9.88205pt too wide) in paragraph at lines 358--359
 []\OT1/cmr/m/n/12 The coarse-grained ACO search is re-fined with the lo-cal sea
 rch and crossover
  []
 
-[13]
-("C:\Users\colinsh\Box Sync\TeX Documents\Ant colony system design\ACO_v2.bbl"
+[14]
+("C:\Users\Mike\Documents\Ph.D\ACO\Latex\Ant colony system design\ACO_v2.bbl"
 Underfull \hbox (badness 1552) in paragraph at lines 9--14
 []\OT1/cmr/m/n/12 J. W. Gille-spie, A. S. Daniels, D. J. Singer, Gen-er-at-ing 
 func-
  []
 
-[14]
+[15] [16]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
@@ -296,25 +299,25 @@ Underfull \hbox (badness 3179) in paragraph at lines 101--105
 iv-abil-ity
  []
 
-[15]
+
 Underfull \hbox (badness 4217) in paragraph at lines 130--135
 []\OT1/cmr/m/n/12 C. M. Schnei-der, N. a. M. Araujo, S. Havlin, H. J. Her-
  []
 
-) [16]
-("C:\Users\colinsh\Box Sync\TeX Documents\Ant colony system design\ACO_v2.aux")
+[17]) [18]
+("C:\Users\Mike\Documents\Ph.D\ACO\Latex\Ant colony system design\ACO_v2.aux")
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3873 strings out of 493921
- 53833 string characters out of 3147275
- 119080 words of memory out of 3000000
- 7130 multiletter control sequences out of 15000+200000
+ 3877 strings out of 493705
+ 53892 string characters out of 3144573
+ 121153 words of memory out of 3000000
+ 7159 multiletter control sequences out of 15000+200000
  12491 words of font info for 48 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 42i,17n,40p,1143b,291s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 1025 hyphenation exceptions out of 8191
+ 42i,17n,40p,1143b,299s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
@@ -329,9 +332,9 @@ es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmtt12.pfb>
-Output written on ACO_v2.pdf (16 pages, 222986 bytes).
+Output written on ACO_v2.pdf (18 pages, 226293 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
+ 120 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

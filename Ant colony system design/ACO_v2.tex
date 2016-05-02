@@ -86,7 +86,7 @@
 %% \address[label2]{}
 
 \author[1]{Colin P. F. Shields}
-\author[1]{Mike J. Sypniewski} 
+\author[1]{Michael J. Sypniewski} 
 \author[1]{David J. Singer} 
 \address[1]{University of Michigan, United States}
 
@@ -113,6 +113,35 @@ System architecture \sep network theory \sep early-stage ship design
 
 %% main text
 \section{Introduction} \label{sec:intro}
+\begin{itemize}
+	\item[Notes:]
+	\item Where does the story take place? What do you need to understand about the situation to follow? What is the larger problem we are addressing?
+	\begin{itemize}
+		\item the story takes place within marine design, with emphasis placed on early stage design so as to combat the density of information needed to conduct an accurate analysis. more importantly though, early stage design is where most of the cost is locked in (traditionally) and the decisions are made that impact the future design of the vessel.
+		\item we need to know that: marine design is complex, early-stage analysis currently requires simplification (parameterization, which eliminates interdependencies through margin, regression, and over-simplification) or more constraints/detail (fully enumerated CAD model) because we can't handle interdependencies well, decisions are made based on metrics that span disciplinary groups such that much detail/time/effort needs to be expended before we can even tell if a design is feasible
+		\item the constraints put in place often result in over-constraint (i.e. in order to analysis something, we will constrain the design far more than is needed)
+		\item (how do we highlight distribution systems here? how is distribution system design and optimization handled currently?)
+		\item traditional optimization involves above parameterization or CAD along with optimizing interdependent systems independently from each other
+		\item how do we explore a multi-system design space?
+	\end{itemize}
+	\item What do we need to accomplish? What specific question do we hope to answer?
+	\begin{itemize}
+		\item we need to create a method to analyze ship designs without over-simplification or requiring on unrealistic/constraining amount of detail
+		\item this analysis requires us to be able to model and account for system interdependencies in early stage ship design
+		\item 
+	\end{itemize}
+	\item What happens to address this challenge (what did we do)?
+	\begin{itemize}
+		\item we propose using a network representation to handle lack of design detail (detailed in Colin's other paper), and an ACO to develop distribution systems in tandem with complexity and survivability objectives to understand design space trade-offs and responses. again, the point of exploration is not achieving an answer, it is understanding implications of decisions such that we can make informed ones
+	\end{itemize}
+\end{itemize}
+\begin{itemize}
+	\item[Plan of attack:]
+	\item identify the problem that drives the research
+	\item introduce the characters
+	\item target an audience
+\end{itemize}
+
 Focus on distribution system design, introduce optimizing distribution system of systems
 
 Distribution systems:
