@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.22)  2 MAY 2016 13:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.1.22)  3 MAY 2016 14:50
 entering extended mode
 **ACO_v2.tex
 ("C:\Users\Mike\Documents\Ph.D\ACO\Latex\Ant colony system design\ACO_v2.tex"
@@ -239,39 +239,37 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 110.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 118.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 123.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 118.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 123.
  [1
 
 
 {C:/Users/Mike/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] 
-[5] [6]
+[5] [6] [7]
 
-LaTeX Warning: Reference `al:Nstruct' on page 7 undefined on input line 234.
-
-
-LaTeX Warning: Reference `al:Nstruct' on page 7 undefined on input line 234.
-
-[7]
-
-LaTeX Warning: Reference `al:Nstruct' on page 8 undefined on input line 243.
+LaTeX Warning: Reference `al:Nstruct' on page 8 undefined on input line 238.
 
 
-LaTeX Warning: Reference `al:Nstruct' on page 8 undefined on input line 243.
+LaTeX Warning: Reference `al:Nstruct' on page 8 undefined on input line 238.
 
-[8] [9] [10] [11] [12] [13]
-Overfull \hbox (9.88205pt too wide) in paragraph at lines 358--359
+
+LaTeX Warning: Reference `al:Nstruct' on page 8 undefined on input line 247.
+
+
+LaTeX Warning: Reference `al:Nstruct' on page 8 undefined on input line 247.
+
+[8] [9] [10] [11] [12] [13] [14]
+Overfull \hbox (9.88205pt too wide) in paragraph at lines 362--363
 []\OT1/cmr/m/n/12 The coarse-grained ACO search is re-fined with the lo-cal sea
 rch and crossover
  []
 
-[14]
 ("C:\Users\Mike\Documents\Ph.D\ACO\Latex\Ant colony system design\ACO_v2.bbl"
 Underfull \hbox (badness 1552) in paragraph at lines 9--14
 []\OT1/cmr/m/n/12 J. W. Gille-spie, A. S. Daniels, D. J. Singer, Gen-er-at-ing 
@@ -299,12 +297,12 @@ Underfull \hbox (badness 3179) in paragraph at lines 101--105
 iv-abil-ity
  []
 
-
+[17]
 Underfull \hbox (badness 4217) in paragraph at lines 130--135
 []\OT1/cmr/m/n/12 C. M. Schnei-der, N. a. M. Araujo, S. Havlin, H. J. Her-
  []
 
-[17]) [18]
+) [18]
 ("C:\Users\Mike\Documents\Ph.D\ACO\Latex\Ant colony system design\ACO_v2.aux")
 
 LaTeX Warning: There were undefined references.
@@ -313,11 +311,11 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  3877 strings out of 493705
  53892 string characters out of 3144573
- 121153 words of memory out of 3000000
+ 122153 words of memory out of 3000000
  7159 multiletter control sequences out of 15000+200000
  12491 words of font info for 48 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 42i,17n,40p,1143b,299s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,17n,40p,1143b,297s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
@@ -332,7 +330,7 @@ es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmtt12.pfb>
-Output written on ACO_v2.pdf (18 pages, 226293 bytes).
+Output written on ACO_v2.pdf (18 pages, 227100 bytes).
 PDF statistics:
  120 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
