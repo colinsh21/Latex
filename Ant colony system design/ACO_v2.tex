@@ -113,17 +113,61 @@ System architecture \sep network theory \sep early-stage ship design
 
 %% main text
 \section{Introduction} \label{sec:intro}
-Ship design is a complex process throughout which decisions are justified by engineering analysis. We run into issues when the analysis requires more information than is within the current scope of the design. We have two common way of handling this lack of information: parameterization or CAD. We use parameterization as a simplification to glean information from similar ships (in a regression based approach). A downfall of this method is lack of originality, not understanding the reasons behind the other ship's decisions (check Colin's other paper for the reasons). We use CAD as a method to establish geometric relationships between components of the design but in doing so significantly constrain our design space (without the analysis to justify why this is done).
+Distribution system design is often postponed until detail design and construction due to the high amount of design detail traditionally required to accurately evaluate system performance against high-level requirements such as survivability.
+Historically this approach has led to poor design outcomes since potential design drivers are only considered after the design has been sufficiently constrained to inhibit efficient and effective design changes.
+In this paper, we suggest a network-based optimization analysis that addresses high-level requirements and accommodates the level of information available in early stage ship design.
+\\
 
-
-
-Early stage decisions in ship design greatly impact the 
-
-Decisions made in early stage ship design have been 
+%Current methods for resolving this lack of design detail in early-stage design are either incomplete or self-constraining.
+%
+%head pressure, blah blah blah, intractable for ESSD. people assume we need a lot of design detail for distribution system analysis.
+%
+%Ship design requires appropriate analysis to make well informed decisions.
+%
+%Often times in ship design there is an insufficient amount of information available to conduct a required analysis. 
+%
+%As a product of traditional engineering disciplines and 
+%
+%Why is ship design complex? Why are decisions hard? Uncertainty of future.
+%
+%Ship design is a complex process that requires analysis to make well-informed decisions. To conduct an analysis, information is needed to be known able the current state of the design.
+%
+%Ship design is a complex process during which decisions must be made to ensure progress.
+%
+%Design decisions are justified by conducting analyses. These analyses range from being relatively simple to complex.
+%
+%decisions made in early stage design dictate high level functionality
+%
+%design are evaluated against one or more objective functions
+%
+%Ship design is a complex process throughout which decisions are justified by engineering analysis. We run into issues when the analysis requires more information than is within the current scope of the design. We have two common way of handling this lack of information: parameterization or CAD. We use parameterization as a simplification to glean information from similar ships (in a regression based approach). A downfall of this method is lack of originality, not understanding the reasons behind the other ship's decisions (check Colin's other paper for the reasons). We use CAD as a method to establish geometric relationships between components of the design but in doing so significantly constrain our design space (without the analysis to justify why this is done).
+%
+%Early stage decisions in ship design greatly impact the 
+%
+%Decisions made in early stage ship design have been 
+%
+%tell them what we are going to do, why they should care, and outline how we are going to do it
+%
+%Design decisions can be justified and understood without
+%
+%Understand design space
+%
+%How can we conduct an analysis to make informed decisions with the limited information of ESSD without assuming the pitfalls of current methods.
 \begin{itemize}
 	\item[Notes:]
 	\item Where does the story take place? What do you need to understand about the situation to follow? What is the larger problem we are addressing?
 	\begin{itemize}
+		\item this is a story about marine design.
+		\item the reader needs to understand:
+		\begin{itemize}
+			\item we make decisions based on the results of engineering analysis
+			\item decision are made starting in ESSD
+			\item the types of analyses being conducted is not always compatible with the amount of information available.
+			\item in ESSD, there is a lack of information
+			\item this lack of information is handled two ways: parameterization and CAD
+			\item parameterization is a simplification that builds off of known designs so as to project knowledge to the current design
+			\item post-CAD analysis makes many implicit assumptions along the way. these assumptions are decisions then that have not been vetted by any analysis.
+		\end{itemize} 
 		\item the story takes place within marine design, with emphasis placed on early stage design so as to combat the density of information needed to conduct an accurate analysis. more importantly though, early stage design is where most of the cost is locked in (traditionally) and the decisions are made that impact the future design of the vessel.
 		\item we need to know that: marine design is complex, early-stage analysis currently requires simplification (parameterization, which eliminates interdependencies through margin, regression, and over-simplification) or more constraints/detail (fully enumerated CAD model) because we can't handle interdependencies well, decisions are made based on metrics that span disciplinary groups such that much detail/time/effort needs to be expended before we can even tell if a design is feasible
 		\item the constraints put in place often result in over-constraint (i.e. in order to analysis something, we will constrain the design far more than is needed)
@@ -148,14 +192,14 @@ Decisions made in early stage ship design have been
 	\item target an audience
 \end{itemize}
 
-Focus on distribution system design, introduce optimizing distribution system of systems
-
-Distribution systems:
-Importance to ship design
-Difficulty
-Approaches
-
-Challenge - How to explore a multi-system design space
+%Focus on distribution system design, introduce optimizing distribution system of systems
+%
+%Distribution systems:
+%Importance to ship design
+%Difficulty
+%Approaches
+%
+%Challenge - How to explore a multi-system design space
 
 \section{Background}
 This section introduces network representations of vessel and system of systems, a system of systems survivability metric, and ant colony optimization methods.
